@@ -136,6 +136,29 @@
         color: #d63384;
       }
     }
+
+    /* Tab customization */
+.tabs.is-boxed ul li a {
+  color: #ffffff; /* White text */
+  font-size: 1.2rem; /* Larger font size */
+  padding: 0.75rem 1.5rem; /* Bigger clickable area */
+  font-weight: bold;
+  border-radius: 10px; /* Rounded edges */
+  transition: all 0.3s ease;
+}
+
+.tabs.is-boxed ul li.is-active a {
+  background-color: var(--pink-dark); /* Dark pink active background */
+  color: #ffffff; /* Active text white */
+}
+
+.tabs.is-boxed ul li a:hover {
+  background-color: var(--pink-medium); /* Medium pink hover */
+  color: #ffffff;
+}
+    
+
+    
   </style>
 </head>
 <body>
