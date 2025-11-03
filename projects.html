@@ -109,98 +109,106 @@
       }
     }
 
-.project-box {
-  background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
-  border: 2px solid var(--pink-faded);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+      max-width: 100%;
+    }
 
-.project-title {
-  color: var(--pink-light);
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-}
+    @media (max-width: 900px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
 
-.project-description {
-  color: #e4e4e4;
-  font-size: 1rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
+    .project-box {
+      background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
+      border: 2px solid var(--pink-faded);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
 
-.image-container {
-  background: rgba(255, 192, 203, 0.05);
-  border: 2px dashed var(--pink-faded);
-  border-radius: 10px;
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  position: relative;
-  overflow: hidden;
-}
+    .project-title {
+      color: #000000;
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 0.75rem;
+    }
 
-.image-placeholder {
-  color: var(--pink-light);
-  opacity: 0.5;
-  text-align: center;
-  font-style: italic;
-}
+    .project-description {
+      color: #808080;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
 
-.carousel-controls {
-  position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.5rem;
-}
+    .image-container {
+      background: rgba(255, 192, 203, 0.05);
+      border: 2px dashed var(--pink-faded);
+      border-radius: 10px;
+      min-height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
 
-.carousel-btn {
-  background: rgba(255, 192, 203, 0.3);
-  border: 1px solid var(--pink-light);
-  color: var(--pink-light);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
+    .image-placeholder {
+      color: var(--pink-light);
+      opacity: 0.5;
+      text-align: center;
+      font-style: italic;
+    }
 
-.carousel-btn:hover {
-  background: rgba(255, 192, 203, 0.5);
-  transform: scale(1.05);
-}
+    .carousel-controls {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+    }
 
-.tech-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
+    .carousel-btn {
+      background: rgba(255, 192, 203, 0.3);
+      border: 1px solid var(--pink-light);
+      color: var(--pink-light);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-.tech-tag {
-  background: rgba(255, 192, 203, 0.35);
-  border: 1px solid var(--pink-medium);
-  color: var(--pink-light);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
+    .carousel-btn:hover {
+      background: rgba(255, 192, 203, 0.5);
+      transform: scale(1.05);
+    }
 
-.tech-tag:hover {
-  background: rgba(255, 192, 203, 0.5);
-  transform: translateY(-2px);
-}
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
 
-    
+    .tech-tag {
+      background: rgba(255, 192, 203, 0.35);
+      border: 1px solid var(--pink-medium);
+      color: var(--pink-light);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .tech-tag:hover {
+      background: rgba(255, 192, 203, 0.5);
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
@@ -243,48 +251,51 @@
   <section class="section" style="margin-top: 3rem;">
     <div class="container">
       <h2 class="title is-2 section-title">Projects</h2>
-<!--- Projects ---->
-      <!-- Project 1: SHPE App -->
-      <div class="project-box">
-        <h3 class="project-title">SHPE App for Kennesaw State University</h3>
-        <p class="project-description">
-          Currently working on deploying SHPE app for eboard members and students from Kennesaw State to use.
-        </p>
 
-        <!-- Image Container -->
-        <div class="image-container">
-          <p class="image-placeholder">[ Insert your project images here ]</p>
-        </div>
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        <!-- Project 1: SHPE App -->
+        <div class="project-box">
+          <h3 class="project-title">SHPE App for Kennesaw State University</h3>
+          <p class="project-description">
+            Currently working on deploying SHPE app for eboard members and students from Kennesaw State to use.
+          </p>
 
-        <!-- Technologies Used -->
-        <div class="tech-stack">
-          <span class="tech-tag">React</span>
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">Java</span>
-          <span class="tech-tag">Firebase</span>
-        </div>
-      </div>
+          <!-- Image Container -->
+          <div class="image-container">
+            <p class="image-placeholder">[ Insert your project images here ]</p>
+          </div>
 
-      <!-- Project 2: Latin Dance Culture -->
-      <div class="project-box">
-        <h3 class="project-title">Latin Dance Culture Awareness Campaign</h3>
-        <p class="project-description">
-          Designed the accompaniments for club intensives to promote Latin rhythm along with sharing and raising awareness through dances. Dance brings culture together and shares cultural stories and struggles, building community through movement and expression.
-        </p>
-
-        <!-- Image Container with Carousel Controls -->
-        <div class="image-container">
-          <p class="image-placeholder">[ Insert your poster images here - click through available ]</p>
-          <div class="carousel-controls">
-            <button class="carousel-btn">◄ Previous</button>
-            <button class="carousel-btn">Next ►</button>
+          <!-- Technologies Used -->
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Firebase</span>
           </div>
         </div>
 
-        <!-- Technologies Used -->
-        <div class="tech-stack">
-          <span class="tech-tag">Canva</span>
+        <!-- Project 2: Latin Dance Culture -->
+        <div class="project-box">
+          <h3 class="project-title">Latin Dance Culture Awareness Campaign</h3>
+          <p class="project-description">
+            Designed the accompaniments for club intensives to promote Latin rhythm along with sharing and raising awareness through dances. Dance brings culture together and shares cultural stories and struggles, building community through movement and expression.
+          </p>
+
+          <!-- Image Container with Carousel Controls -->
+          <div class="image-container">
+            <p class="image-placeholder">[ Insert your poster images here - click through available ]</p>
+            <div class="carousel-controls">
+              <button class="carousel-btn">◄ Previous</button>
+              <button class="carousel-btn">Next ►</button>
+            </div>
+          </div>
+
+          <!-- Technologies Used -->
+          <div class="tech-stack">
+            <span class="tech-tag">Canva</span>
+          </div>
         </div>
       </div>
 
