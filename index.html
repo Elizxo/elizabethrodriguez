@@ -1,194 +1,87 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elizabeth Rodriguez - Home</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-  <style>
-    :root {
-      --pink-light: #ffc0cb;
-      --pink-medium: #ffb6c1;
-      --pink-dark: #ff69b4;
-      --pink-faded: rgba(255, 192, 203, 0.15);
-      --pink-faded-strong: rgba(255, 192, 203, 0.25);
-    }
-
-    body {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-      min-height: 100vh;
-      color: #e4e4e4;
-    }
-
-    .navbar {
-      background: rgba(26, 26, 46, 0.95) !important;
-      border-bottom: 2px solid var(--pink-faded);
-      backdrop-filter: blur(10px);
-    }
-
-    .navbar-item, .navbar-link {
-      color: var(--pink-light) !important;
-      transition: all 0.3s ease;
-    }
-
-    .navbar-item:hover, .navbar-link:hover {
-      background-color: var(--pink-faded) !important;
-      color: var(--pink-dark) !important;
-    }
-
-    .navbar-brand .navbar-item {
-      font-weight: bold;
-      font-size: 1.3rem;
-    }
-
-    .navbar-burger span {
-      background-color: #000 !important;
-    }
-
-    .bio-section {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem;
-    }
-
-    .bio-card {
-      background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
-      border-radius: 15px;
-      padding: 2rem;
-      border: 1px solid var(--pink-faded);
-      text-align: center;
-    }
-
-    .bio-card h1 {
-      color: var(--pink-light);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 20px rgba(255, 192, 203, 0.3);
-    }
-
-    .bio-card p {
-      color: #e4e4e4;
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    footer {
-      background: rgba(26, 26, 46, 0.95);
-      border-top: 2px solid var(--pink-faded);
-      margin-top: 4rem;
-      padding: 2rem 0;
-    }
-
-    footer p {
-      color: var(--pink-light);
-      opacity: 0.8;
-    }
-
-    @media (prefers-color-scheme: light) {
-      body {
-        background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 50%, #ffd4e5 100%);
-        color: #2d2d2d;
-      }
-
-      .navbar {
-        background: rgba(255, 255, 255, 0.95) !important;
-      }
-
-      .navbar-item, .navbar-link {
-        color: #d63384 !important;
-      }
-
-      .bio-card h1 {
-        color: #d63384;
-      }
-
-      .bio-card p {
-        color: #2d2d2d;
-      }
-
-      footer {
-        background: rgba(255, 255, 255, 0.95);
-      }
-
-      footer p {
-        color: #d63384;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Navigation -->
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="container">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="index.html">
-          ER
-        </a>
-
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="navbarMenu" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="index.html">
-            Home
-          </a>
-
-          <a class="navbar-item" href="projects.html">
-            Projects
-          </a>
-
-          <a class="navbar-item" href="contact.html">
-            Contact Me
-          </a>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Bio Section -->
-  <section class="section" style="margin-top: 3rem;">
-    <div class="bio-section">
-      <div class="bio-card">
-        <h1>Hey there, I'm Elizabeth Serrano</h1>
-        <p>
-          a developer with a love for bringing creative, innovative ideas to life.
-          I design and deploy projects that inspire me with a touch of my imagination.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="content has-text-centered">
+<!-- Bio Section -->
+<section class="section" style="margin-top: 3rem;">
+  <div class="bio-section">
+    <div class="bio-card">
+      <h1>Hey there, I'm Elizabeth Serrano</h1>
       <p>
-        <strong>Elizabeth Rodriguez</strong> © 2024
+        a developer with a love for bringing creative, innovative ideas to life.
+        I design and deploy projects that inspire me with a touch of my imagination.
       </p>
     </div>
-  </footer>
 
-  <script>
-    // Mobile navbar toggle
-    document.addEventListener('DOMContentLoaded', () => {
-      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    <!-- Tabs for Education / Experience -->
+    <div class="tabs is-centered is-boxed" style="margin-top: 2rem;">
+      <ul>
+        <li class="is-active" data-tab="education"><a>Education</a></li>
+        <li data-tab="experience"><a>Experience</a></li>
+      </ul>
+    </div>
 
-      $navbarBurgers.forEach( el => {
-        el.addEventListener('click', () => {
-          const target = el.dataset.target;
-          const $target = document.getElementById(target);
-          el.classList.toggle('is-active');
-          $target.classList.toggle('is-active');
-        });
-      });
+    <!-- Tab Content Boxes -->
+    <div class="tab-content">
+      <!-- Education Content -->
+      <div class="tab-box" id="education" style="display: block; margin-top: 1.5rem; background: rgba(255,192,203,0.1); border-radius: 15px; padding: 2rem; border: 1px solid rgba(255,192,203,0.25);">
+        <h3 class="title is-4">Education</h3>
+        <ul>
+          <li><strong>Kennesaw State University</strong> – Kennesaw, GA
+            <ul>
+              <li>Bachelor of Science, Computer Science</li>
+              <li>Minor: Software Engineering</li>
+              <li>Expected Graduation: June 2026</li>
+            </ul>
+          </li>
+          <li><strong>Georgia Southern University</strong> – Statesboro, GA
+            <ul>
+              <li>Bachelor of Science, Computer Science</li>
+              <li>August 2022 – July 2024</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Experience Content -->
+      <div class="tab-box" id="experience" style="display: none; margin-top: 1.5rem; background: rgba(255,192,203,0.1); border-radius: 15px; padding: 2rem; border: 1px solid rgba(255,192,203,0.25);">
+        <h3 class="title is-4">Experience</h3>
+        <ul>
+          <li><strong>Google’s Computer Science Summer Institute</strong> – Atlanta, GA | July 2022 – August 2022
+            <ul>
+              <li>Presented a web-based interactive musical instrument as a capstone project to Google engineers and community leaders, demonstrating technical expertise, creativity, problem-solving, and communication skills.</li>
+              <li>Completed a project-based web development curriculum in HTML, CSS, and JavaScript, taught by Google engineers.</li>
+              <li>Attended UX, product design, and software engineering interview workshops.</li>
+              <li>Built and configured interactive web applications using JavaScript, applying core programming concepts.</li>
+            </ul>
+          </li>
+          <li><strong>Dunkin Donuts</strong> – Atlanta, GA | Feb 2019 – Dec 2019
+            <ul>
+              <li>Provided services to assist consumers and resolve issues such as communication errors, refunds, and transfers.</li>
+              <li>Maintained store organization while assisting customers efficiently and professionally.</li>
+              <li>Handled in-person inquiries to improve customer satisfaction and strengthen client-facing communication skills.</li>
+              <li>Worked collaboratively in a fast-paced environment, contributing to team productivity.</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Tab switching functionality
+  const tabs = document.querySelectorAll('.tabs li');
+  const tabBoxes = document.querySelectorAll('.tab-box');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active class from all tabs
+      tabs.forEach(t => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+
+      // Hide all tab boxes
+      tabBoxes.forEach(box => box.style.display = 'none');
+
+      // Show the selected tab
+      const tabId = tab.dataset.tab;
+      document.getElementById(tabId).style.display = 'block';
     });
-  </script>
-
-</body>
-</html>
+  });
+</script>
