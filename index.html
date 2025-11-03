@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elizabeth Serrano - Home</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <style>
+    :root {
+      --pink-light: #ffc0cb;
+      --pink-medium: #ffb6c1;
+      --pink-dark: #ff69b4;
+      --pink-faded: rgba(255, 192, 203, 0.15);
+      --pink-faded-strong: rgba(255, 192, 203, 0.25);
+    }
+
+    body {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      color: #e4e4e4;
+    }
+
+    .navbar {
+      background: rgba(26, 26, 46, 0.95) !important;
+      border-bottom: 2px solid var(--pink-faded);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-item, .navbar-link {
+      color: var(--pink-light) !important;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-item:hover, .navbar-link:hover {
+      background-color: var(--pink-faded) !important;
+      color: var(--pink-dark) !important;
+    }
+
+    .navbar-brand .navbar-item {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .navbar-burger span {
+      background-color: #000 !important;
+    }
+
+    .bio-section {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .bio-card {
+      background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
+      border-radius: 15px;
+      padding: 2rem;
+      border: 1px solid var(--pink-faded);
+      text-align: center;
+    }
+
+    .bio-card h1 {
+      color: var(--pink-light);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 20px rgba(255, 192, 203, 0.3);
+    }
+
+    .bio-card p {
+      color: #e4e4e4;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: rgba(26, 26, 46, 0.95);
+      border-top: 2px solid var(--pink-faded);
+      margin-top: 4rem;
+      padding: 2rem 0;
+    }
+
+    footer p {
+      color: var(--pink-light);
+      opacity: 0.8;
+    }
+
+    @media (prefers-color-scheme: light) {
+      body {
+        background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 50%, #ffd4e5 100%);
+        color: #2d2d2d;
+      }
+
+      .navbar {
+        background: rgba(255, 255, 255, 0.95) !important;
+      }
+
+      .navbar-item, .navbar-link {
+        color: #d63384 !important;
+      }
+
+      .bio-card h1 {
+        color: #d63384;
+      }
+
+      .bio-card p {
+        color: #2d2d2d;
+      }
+
+      footer {
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      footer p {
+        color: #d63384;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="index.html">
+          ES
+        </a>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="index.html">
+            Home
+          </a>
+
+          <a class="navbar-item" href="projects.html">
+            Projects
+          </a>
+
+          <a class="navbar-item" href="contact.html">
+            Contact Me
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Bio Section -->
+  <section class="section" style="margin-top: 3rem;">
+    <div class="bio-section">
+      <div class="bio-card">
+        <h1>Hey there, I'm Elizabeth Serrano</h1>
+        <p>
+          a Developer with a love for bringing creative, innovative ideas to life.
+          I design and deploy projects that inspire me with a touch of my imagination.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Elizabeth Serrano</strong> © 2024
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navbar toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      $navbarBurgers.forEach( el => {
+        el.addEventListener('click', () => {
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
