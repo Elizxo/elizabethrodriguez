@@ -72,13 +72,26 @@
       line-height: 1.6;
     }
 
-    /* Tab content styling */
+    /* Tab content using project-box style */
     .tab-box {
-      background: rgba(255,192,203,0.1);
-      border-radius: 15px;
-      padding: 2rem;
-      border: 1px solid rgba(255,192,203,0.25);
+      background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
+      border: 2px solid var(--pink-faded);
+      border-radius: 12px;
+      padding: 1.5rem;
       margin-top: 1.5rem;
+    }
+
+    .project-title {
+      color: #000000;
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 0.75rem;
+    }
+
+    .project-description {
+      color: #808080;
+      font-size: 1rem;
+      line-height: 1.5;
     }
 
     footer {
@@ -131,9 +144,7 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item" href="index.html">
-          ER
-        </a>
+        <a class="navbar-item" href="index.html">ER</a>
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
           <span aria-hidden="true"></span>
@@ -145,15 +156,9 @@
 
       <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="index.html">
-            Home
-          </a>
-          <a class="navbar-item" href="projects.html">
-            Projects
-          </a>
-          <a class="navbar-item" href="contact.html">
-            Contact Me
-          </a>
+          <a class="navbar-item" href="index.html">Home</a>
+          <a class="navbar-item" href="projects.html">Projects</a>
+          <a class="navbar-item" href="contact.html">Contact Me</a>
         </div>
       </div>
     </div>
@@ -170,40 +175,20 @@
         </p>
       </div>
 
-      <!-- Tabs for Education / Experience -->
+      <!-- Tabs for Experience / Education -->
       <div class="tabs is-centered is-boxed" style="margin-top: 2rem;">
         <ul>
-          <li class="is-active" data-tab="education"><a>Education</a></li>
-          <li data-tab="experience"><a>Experience</a></li>
+          <li class="is-active" data-tab="experience"><a>Experience</a></li>
+          <li data-tab="education"><a>Education</a></li>
         </ul>
       </div>
 
       <!-- Tab Content Boxes -->
       <div class="tab-content">
-        <!-- Education Content -->
-        <div class="tab-box" id="education" style="display: block;">
-          <h3 class="title is-4">Education</h3>
-          <ul>
-            <li><strong>Kennesaw State University</strong> – Kennesaw, GA
-              <ul>
-                <li>Bachelor of Science, Computer Science</li>
-                <li>Minor: Software Engineering</li>
-                <li>Expected Graduation: June 2026</li>
-              </ul>
-            </li>
-            <li><strong>Georgia Southern University</strong> – Statesboro, GA
-              <ul>
-                <li>Bachelor of Science, Computer Science</li>
-                <li>August 2022 – July 2024</li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-
         <!-- Experience Content -->
-        <div class="tab-box" id="experience" style="display: none;">
-          <h3 class="title is-4">Experience</h3>
-          <ul>
+        <div class="tab-box" id="experience" style="display: block;">
+          <h3 class="project-title">Experience</h3>
+          <ul class="project-description">
             <li><strong>Google’s Computer Science Summer Institute</strong> – Atlanta, GA | July 2022 – August 2022
               <ul>
                 <li>Presented a web-based interactive musical instrument as a capstone project to Google engineers and community leaders.</li>
@@ -222,7 +207,28 @@
             </li>
           </ul>
         </div>
+
+        <!-- Education Content -->
+        <div class="tab-box" id="education" style="display: none;">
+          <h3 class="project-title">Education</h3>
+          <ul class="project-description">
+            <li><strong>Kennesaw State University</strong> – Kennesaw, GA
+              <ul>
+                <li>Bachelor of Science, Computer Science</li>
+                <li>Minor: Software Engineering</li>
+                <li>Expected Graduation: June 2026</li>
+              </ul>
+            </li>
+            <li><strong>Georgia Southern University</strong> – Statesboro, GA
+              <ul>
+                <li>Bachelor of Science, Computer Science</li>
+                <li>August 2022 – July 2024</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -236,10 +242,9 @@
   </footer>
 
   <script>
-    // Mobile navbar toggle
+    // Mobile navbar toggle and tab switching
     document.addEventListener('DOMContentLoaded', () => {
       const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
       $navbarBurgers.forEach(el => {
         el.addEventListener('click', () => {
           const target = el.dataset.target;
@@ -249,7 +254,6 @@
         });
       });
 
-      // Tab switching functionality
       const tabs = document.querySelectorAll('.tabs li');
       const tabBoxes = document.querySelectorAll('.tab-box');
 
@@ -267,3 +271,4 @@
 
 </body>
 </html>
+
