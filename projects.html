@@ -209,6 +209,15 @@
       background: rgba(255, 192, 203, 0.5);
       transform: translateY(-2px);
     }
+
+    .project-image {
+    width: 80%;          /* scales image size */
+    max-width: 400px;    /* prevents it from being too large */
+    height: auto;        /* maintains aspect ratio */
+    border-radius: 10px; /* optional: gives soft corners */
+  object-fit: cover;   /* ensures image fits nicely in container */
+  }
+    
   </style>
 </head>
 <body>
