@@ -1,0 +1,76 @@
+:root {
+  --pink-light: #ffc0cb;
+  --pink-medium: #ffb6c1;
+  --pink-dark: #ff69b4;
+  --pink-faded: rgba(255, 192, 203, 0.15);
+  --pink-faded-strong: rgba(255, 192, 203, 0.25);
+}
+
+body {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
+  color: #e4e4e4;
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(26, 26, 46, 0.95) !important;
+  border-bottom: 2px solid var(--pink-faded);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-item, .navbar-link {
+  color: var(--pink-light) !important;
+  transition: all 0.3s ease;
+}
+
+.navbar-item:hover, .navbar-link:hover {
+  background-color: var(--pink-faded) !important;
+  color: var(--pink-dark) !important;
+}
+
+.navbar-brand .navbar-item {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.navbar-burger span {
+  background-color: #000 !important;
+}
+
+/* Footer */
+footer {
+  background: rgba(26, 26, 46, 0.95);
+  border-top: 2px solid var(--pink-faded);
+  margin-top: 4rem;
+  padding: 2rem 0;
+}
+
+footer p {
+  color: var(--pink-light);
+  opacity: 0.8;
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  body {
+    background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 50%, #ffd4e5 100%);
+    color: #2d2d2d;
+  }
+
+  .navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+
+  .navbar-item, .navbar-link {
+    color: #d63384 !important;
+  }
+
+  footer {
+    background: rgba(255, 255, 255, 0.95);
+  }
+
+  footer p {
+    color: #d63384;
+  }
+}
