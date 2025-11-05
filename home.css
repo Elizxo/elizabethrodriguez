@@ -1,1 +1,73 @@
+.bio-section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.bio-card {
+  background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid var(--pink-faded);
+  text-align: center;
+}
+
+.bio-card h1 {
+  color: var(--pink-light);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(255, 192, 203, 0.3);
+}
+
+.bio-card p {
+  color: #e4e4e4;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.tab-box {
+  background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
+  border: 2px solid var(--pink-faded);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-title {
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.project-description {
+  color: #808080;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.project-description strong {
+  color: #b0b0b0;
+  font-weight: 600;
+}
+
+/* Tabs */
+.tabs.is-boxed ul li a {
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.tabs.is-boxed ul li.is-active a {
+  background-color: var(--pink-dark);
+  color: #ffffff;
+}
+
+.tabs.is-boxed ul li a:hover {
+  background-color: var(--pink-medium);
+  color: #ffffff;
+}
 
