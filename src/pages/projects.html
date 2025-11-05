@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elizabeth Rodriguez - Projects</title>
+
+  <!-- Bulma CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+
   <style>
     :root {
       --pink-light: #ffc0cb;
@@ -98,13 +101,6 @@
       border-radius: 8px;
     }
 
-    .image-placeholder {
-      color: var(--pink-light);
-      opacity: 0.5;
-      text-align: center;
-      font-style: italic;
-    }
-
     .carousel-controls {
       position: absolute;
       bottom: 1rem;
@@ -168,31 +164,21 @@
         background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 50%, #ffd4e5 100%);
         color: #2d2d2d;
       }
-
       .navbar {
         background: rgba(255, 255, 255, 0.95) !important;
       }
-
       .navbar-item, .navbar-link {
         color: #d63384 !important;
       }
-
-      .section-title {
+      .section-title, .project-title {
         color: #d63384;
       }
-
-      .project-title {
-        color: #d63384;
-      }
-
       .project-description {
         color: #2d2d2d;
       }
-
       footer {
         background: rgba(255, 255, 255, 0.95);
       }
-
       footer p {
         color: #d63384;
       }
@@ -205,10 +191,10 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item" href="../index.html">ER</a>
+        <!-- ✅ Fixed paths (stays in same folder as index.html) -->
+        <a class="navbar-item" href="index.html">ER</a>
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
-          <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -217,7 +203,7 @@
 
       <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="../index.html">Home</a>
+          <a class="navbar-item" href="index.html">Home</a>
           <a class="navbar-item" href="projects.html">Projects</a>
           <a class="navbar-item" href="contact.html">Contact Me</a>
         </div>
@@ -230,19 +216,18 @@
     <div class="container">
       <h2 class="title is-2 section-title">Projects</h2>
 
-      <!-- Project 1: SHPE App -->
+      <!-- Project 1 -->
       <div class="project-box">
         <h3 class="project-title">SHPE App for Kennesaw State University</h3>
         <p class="project-description">
-          Currently working on deploying SHPE app for eboard members and students from Kennesaw State to use.
+          Currently working on deploying SHPE app for e-board members and students from Kennesaw State to use.
         </p>
 
-        <!-- Image Container -->
         <div class="image-container">
-          <img src="../Shpe.png" alt="SHPE App Screenshot">
+          <!-- ✅ Image path corrected -->
+          <img src="../../Shpe.png" alt="SHPE App Screenshot">
         </div>
 
-        <!-- Technologies Used -->
         <div class="tech-stack">
           <span class="tech-tag">React</span>
           <span class="tech-tag">HTML</span>
@@ -252,51 +237,47 @@
         </div>
       </div>
 
-      <!-- Project 2: Latin Dance Culture -->
+      <!-- Project 2 -->
       <div class="project-box">
         <h3 class="project-title">Latin Dance Culture Awareness Campaign</h3>
         <p class="project-description">
-          Designed the accompaniments for club intensives to promote Latin rhythm along with sharing and raising awareness through dances. Dance brings culture together and shares cultural stories and struggles, building community through movement and expression.
+          Designed accompaniments for club intensives to promote Latin rhythm and share awareness through dance. Dance brings culture together and tells stories of community, resilience, and joy.
         </p>
 
-        <!-- Image Container with Carousel Controls -->
         <div class="image-container">
-          <img src="../Latin.jpeg" alt="Latin Dance Poster">
+          <!-- ✅ Image path corrected -->
+          <img src="../../Latin.jpeg" alt="Latin Dance Poster">
           <div class="carousel-controls">
             <button class="carousel-btn">◄ Previous</button>
             <button class="carousel-btn">Next ►</button>
           </div>
         </div>
 
-        <!-- Technologies Used -->
         <div class="tech-stack">
           <span class="tech-tag">Canva</span>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="content has-text-centered">
-      <p>
-        <strong>Elizabeth Rodriguez</strong> © 2024
-      </p>
+      <p><strong>Elizabeth Rodriguez</strong> © 2024</p>
     </div>
   </footer>
 
+  <!-- JavaScript -->
   <script>
     // Mobile navbar toggle
     document.addEventListener('DOMContentLoaded', () => {
-      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-      $navbarBurgers.forEach( el => {
-        el.addEventListener('click', () => {
-          const target = el.dataset.target;
-          const $target = document.getElementById(target);
-          el.classList.toggle('is-active');
-          $target.classList.toggle('is-active');
+      const burgers = document.querySelectorAll('.navbar-burger');
+      burgers.forEach(burger => {
+        burger.addEventListener('click', () => {
+          const target = burger.dataset.target;
+          const menu = document.getElementById(target);
+          burger.classList.toggle('is-active');
+          menu.classList.toggle('is-active');
         });
       });
     });
