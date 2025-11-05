@@ -19,6 +19,12 @@
       background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
       min-height: 100vh;
       color: #e4e4e4;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
     }
 
     .navbar {
@@ -169,19 +175,21 @@
   </nav>
 
   <!-- Contact Section -->
-  <section class="section" style="margin-top: 3rem;">
-    <div class="container">
-      <h2 class="title is-2 section-title">Contact Me</h2>
-      <div class="contact-box">
-        <div class="contact-item">
-          <span class="contact-icon">📧</span>
-          <a href="mailto:elizabethrodriguezbrs@gmail.com" class="contact-link">
-            elizabethrodriguezbrs@gmail.com
-          </a>
+  <main>
+    <section class="section" style="margin-top: 3rem;">
+      <div class="container">
+        <h2 class="title is-2 section-title">Contact Me</h2>
+        <div class="contact-box">
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <a href="mailto:elizabethrodriguezbrs@gmail.com" class="contact-link">
+              elizabethrodriguezbrs@gmail.com
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
