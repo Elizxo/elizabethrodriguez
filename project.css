@@ -1,1 +1,110 @@
+.section-title {
+  color: var(--pink-medium);
+  border-bottom: 3px solid var(--pink-faded-strong);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  text-shadow: 0 0 15px rgba(255, 192, 203, 0.2);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-box {
+  background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
+  border: 2px solid var(--pink-faded);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.project-title {
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.project-description {
+  color: #808080;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.image-container {
+  background: rgba(255, 192, 203, 0.05);
+  border: 2px dashed var(--pink-faded);
+  border-radius: 10px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.carousel-controls {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.carousel-btn {
+  background: rgba(255, 192, 203, 0.3);
+  border: 1px solid var(--pink-light);
+  color: var(--pink-light);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 192, 203, 0.5);
+  transform: scale(1.05);
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tech-tag {
+  background: rgba(255, 192, 203, 0.35);
+  border: 1px solid var(--pink-medium);
+  color: var(--pink-light);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(255, 192, 203, 0.5);
+  transform: translateY(-2px);
+}
 
