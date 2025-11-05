@@ -42,7 +42,7 @@
     }
 
     .navbar-burger span {
-      background-color: #000 !important;
+      background-color: var(--pink-dark) !important;
     }
 
     .section-title {
@@ -54,91 +54,26 @@
       text-shadow: 0 0 15px rgba(255, 192, 203, 0.2);
     }
 
-    .projects-container {
-      background: rgba(255, 192, 203, 0.05);
-      border-radius: 10px;
-      padding: 2rem;
-      min-height: 400px;
-      border: 1px dashed var(--pink-faded);
-    }
-
-    .projects-placeholder {
-      text-align: center;
-      color: var(--pink-light);
-      opacity: 0.6;
-      font-style: italic;
-      padding: 4rem 0;
-    }
-
-    footer {
-      background: rgba(26, 26, 46, 0.95);
-      border-top: 2px solid var(--pink-faded);
-      margin-top: 4rem;
-      padding: 2rem 0;
-    }
-
-    footer p {
-      color: var(--pink-light);
-      opacity: 0.8;
-    }
-
-    @media (prefers-color-scheme: light) {
-      body {
-        background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 50%, #ffd4e5 100%);
-        color: #2d2d2d;
-      }
-
-      .navbar {
-        background: rgba(255, 255, 255, 0.95) !important;
-      }
-
-      .navbar-item, .navbar-link {
-        color: #d63384 !important;
-      }
-
-      .section-title {
-        color: #d63384;
-      }
-
-      footer {
-        background: rgba(255, 255, 255, 0.95);
-      }
-
-      footer p {
-        color: #d63384;
-      }
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      margin-top: 2rem;
-      max-width: 100%;
-    }
-
-    @media (max-width: 900px) {
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
     .project-box {
       background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
       border: 2px solid var(--pink-faded);
       border-radius: 12px;
       padding: 1.5rem;
+      margin-bottom: 2rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .project-title {
-      color: #000000;
+      color: var(--pink-light);
       font-size: 1.3rem;
       font-weight: bold;
       margin-bottom: 0.75rem;
     }
 
     .project-description {
-      color: #808080;
+      color: #e4e4e4;
       font-size: 1rem;
       line-height: 1.5;
       margin-bottom: 1rem;
@@ -155,6 +90,12 @@
       margin-bottom: 1rem;
       position: relative;
       overflow: hidden;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
     }
 
     .image-placeholder {
@@ -210,14 +151,52 @@
       transform: translateY(-2px);
     }
 
-    .project-image {
-    width: 80%;          /* scales image size */
-    max-width: 400px;    /* prevents it from being too large */
-    height: auto;        /* maintains aspect ratio */
-    border-radius: 10px; /* optional: gives soft corners */
-  object-fit: cover;   /* ensures image fits nicely in container */
-  }
-    
+    footer {
+      background: rgba(26, 26, 46, 0.95);
+      border-top: 2px solid var(--pink-faded);
+      margin-top: 4rem;
+      padding: 2rem 0;
+    }
+
+    footer p {
+      color: var(--pink-light);
+      opacity: 0.8;
+    }
+
+    @media (prefers-color-scheme: light) {
+      body {
+        background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 50%, #ffd4e5 100%);
+        color: #2d2d2d;
+      }
+
+      .navbar {
+        background: rgba(255, 255, 255, 0.95) !important;
+      }
+
+      .navbar-item, .navbar-link {
+        color: #d63384 !important;
+      }
+
+      .section-title {
+        color: #d63384;
+      }
+
+      .project-title {
+        color: #d63384;
+      }
+
+      .project-description {
+        color: #2d2d2d;
+      }
+
+      footer {
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      footer p {
+        color: #d63384;
+      }
+    }
   </style>
 </head>
 <body>
@@ -226,9 +205,7 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item" href="index.html">
-          ER
-        </a>
+        <a class="navbar-item" href="../index.html">ER</a>
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
           <span aria-hidden="true"></span>
@@ -240,17 +217,9 @@
 
       <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="index.html">
-            Home
-          </a>
-
-          <a class="navbar-item" href="projects.html">
-            Projects
-          </a>
-
-          <a class="navbar-item" href="contact.html">
-            Contact Me
-          </a>
+          <a class="navbar-item" href="../index.html">Home</a>
+          <a class="navbar-item" href="projects.html">Projects</a>
+          <a class="navbar-item" href="contact.html">Contact Me</a>
         </div>
       </div>
     </div>
@@ -261,56 +230,47 @@
     <div class="container">
       <h2 class="title is-2 section-title">Projects</h2>
 
-      <!-- Projects Grid -->
-      <div class="projects-grid">
-        <!-- Project 1: SHPE App -->
-        <div class="project-box">
-          <h3 class="project-title">SHPE App for Kennesaw State University</h3>
-          <p class="project-description">
-            Currently deploying an app for Kennesaw State SHPE eboard members and students, enabling them to track attendee records, access chapter information, monitor membership data, and manage fund collection in a centralized platform.
-          </p>
+      <!-- Project 1: SHPE App -->
+      <div class="project-box">
+        <h3 class="project-title">SHPE App for Kennesaw State University</h3>
+        <p class="project-description">
+          Currently working on deploying SHPE app for eboard members and students from Kennesaw State to use.
+        </p>
 
-          <!-- Image Container -->
-         <div class="image-container">
-        <img src="https://raw.githubusercontent.com/Elizxo/elizabethrodriguez/main/Shpe.png" 
-         alt="SHPE App Screenshot" 
-           class="project-image">
-          </div>
+        <!-- Image Container -->
+        <div class="image-container">
+          <img src="../Shpe.png" alt="SHPE App Screenshot">
+        </div>
 
-          <!-- Technologies Used -->
-          <div class="tech-stack">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">CSS</span>
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">Firebase</span>
+        <!-- Technologies Used -->
+        <div class="tech-stack">
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">Java</span>
+          <span class="tech-tag">Firebase</span>
+        </div>
+      </div>
+
+      <!-- Project 2: Latin Dance Culture -->
+      <div class="project-box">
+        <h3 class="project-title">Latin Dance Culture Awareness Campaign</h3>
+        <p class="project-description">
+          Designed the accompaniments for club intensives to promote Latin rhythm along with sharing and raising awareness through dances. Dance brings culture together and shares cultural stories and struggles, building community through movement and expression.
+        </p>
+
+        <!-- Image Container with Carousel Controls -->
+        <div class="image-container">
+          <img src="../Latin.jpeg" alt="Latin Dance Poster">
+          <div class="carousel-controls">
+            <button class="carousel-btn">◄ Previous</button>
+            <button class="carousel-btn">Next ►</button>
           </div>
         </div>
 
-        <!-- Project 2: Latin Dance Culture -->
-        <div class="project-box">
-          <h3 class="project-title">Latin Dance Culture Awareness Campaign</h3>
-          <p class="project-description">
-            Created visual accompaniments and promotional materials for club intensives, designed to showcase Latin rhythm while sharing and raising awareness through dance. The materials communicated cultural stories, celebrated heritage, and fostered community engagement, ensuring each event connected audiences with the cultural and social significance of Latin dance.
-          </p>
-
-          <!-- Image Container with Carousel Controls -->
-          <div class="image-container">
-         <img src="https://raw.githubusercontent.com/Elizxo/elizabethrodriguez/main/Latin.jpeg" 
-         alt="Latin Dance Awareness Campaign" 
-         class="project-image">
-
-            
-            <div class="carousel-controls">
-              <button class="carousel-btn">◄ Previous</button>
-              <button class="carousel-btn">Next ►</button>
-            </div>
-          </div>
-
-          <!-- Technologies Used -->
-          <div class="tech-stack">
-            <span class="tech-tag">Canva</span>
-          </div>
+        <!-- Technologies Used -->
+        <div class="tech-stack">
+          <span class="tech-tag">Canva</span>
         </div>
       </div>
 
