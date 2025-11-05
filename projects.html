@@ -57,15 +57,27 @@
       text-shadow: 0 0 15px rgba(255, 192, 203, 0.2);
     }
 
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
     .project-box {
       background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
       border: 2px solid var(--pink-faded);
       border-radius: 12px;
       padding: 1.5rem;
-      margin-bottom: 2rem;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .project-title {
@@ -86,7 +98,7 @@
       background: rgba(255, 192, 203, 0.05);
       border: 2px dashed var(--pink-faded);
       border-radius: 10px;
-      min-height: 200px;
+      height: 250px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -97,7 +109,10 @@
 
     .image-container img {
       max-width: 100%;
+      max-height: 100%;
+      width: auto;
       height: auto;
+      object-fit: contain;
       border-radius: 8px;
     }
 
@@ -215,43 +230,45 @@
     <div class="container">
       <h2 class="title is-2 section-title">Projects</h2>
 
-      <!-- Project 1 -->
-      <div class="project-box">
-        <h3 class="project-title">SHPE App for Kennesaw State University</h3>
-        <p class="project-description">
-          Currently working on deploying SHPE app for e-board members and students from Kennesaw State to use.
-        </p>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-box">
+          <h3 class="project-title">SHPE App for Kennesaw State University</h3>
+          <p class="project-description">
+            Currently working on deploying SHPE app for e-board members and students from Kennesaw State to use.
+          </p>
 
-        <div class="image-container">
-          <img src="Shpe.png" alt="SHPE App Screenshot">
-        </div>
+          <div class="image-container">
+            <img src="Shpe.png" alt="SHPE App Screenshot">
+          </div>
 
-        <div class="tech-stack">
-          <span class="tech-tag">React</span>
-          <span class="tech-tag">HTML</span>
-          <span class="tech-tag">CSS</span>
-          <span class="tech-tag">Java</span>
-          <span class="tech-tag">Firebase</span>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="project-box">
-        <h3 class="project-title">Latin Dance Culture Awareness Campaign</h3>
-        <p class="project-description">
-          Designed accompaniments for club intensives to promote Latin rhythm and share awareness through dance. Dance brings culture together and tells stories of community, resilience, and joy.
-        </p>
-
-        <div class="image-container">
-          <img src="Latin.jpeg" alt="Latin Dance Poster">
-          <div class="carousel-controls">
-            <button class="carousel-btn">◄ Previous</button>
-            <button class="carousel-btn">Next ►</button>
+          <div class="tech-stack">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">Firebase</span>
           </div>
         </div>
 
-        <div class="tech-stack">
-          <span class="tech-tag">Canva</span>
+        <!-- Project 2 -->
+        <div class="project-box">
+          <h3 class="project-title">Latin Dance Culture Awareness Campaign</h3>
+          <p class="project-description">
+            Designed accompaniments for club intensives to promote Latin rhythm and share awareness through dance. Dance brings culture together and tells stories of community, resilience, and joy.
+          </p>
+
+          <div class="image-container">
+            <img src="Latin.jpeg" alt="Latin Dance Poster">
+            <div class="carousel-controls">
+              <button class="carousel-btn">◄ Previous</button>
+              <button class="carousel-btn">Next ►</button>
+            </div>
+          </div>
+
+          <div class="tech-stack">
+            <span class="tech-tag">Canva</span>
+          </div>
         </div>
       </div>
     </div>
