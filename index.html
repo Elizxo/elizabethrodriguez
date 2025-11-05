@@ -7,6 +7,181 @@
 
   <!-- Bulma CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+
+  <style>
+    :root {
+      --pink-light: #ffc0cb;
+      --pink-medium: #ffb6c1;
+      --pink-dark: #ff69b4;
+      --pink-faded: rgba(255, 192, 203, 0.15);
+      --pink-faded-strong: rgba(255, 192, 203, 0.25);
+    }
+
+    body {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      color: #e4e4e4;
+    }
+
+    .navbar {
+      background: rgba(26, 26, 46, 0.95) !important;
+      border-bottom: 2px solid var(--pink-faded);
+      backdrop-filter: blur(10px);
+    }
+
+    .navbar-item, .navbar-link {
+      color: var(--pink-light) !important;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-item:hover, .navbar-link:hover {
+      background-color: var(--pink-faded) !important;
+      color: var(--pink-dark) !important;
+    }
+
+    .navbar-brand .navbar-item {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .navbar-burger span {
+      background-color: var(--pink-dark) !important;
+    }
+
+    .bio-section {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .bio-card {
+      background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
+      border: 2px solid var(--pink-faded);
+      border-radius: 15px;
+      padding: 2.5rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .bio-card h1 {
+      color: var(--pink-medium);
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 15px rgba(255, 192, 203, 0.2);
+    }
+
+    .bio-card p {
+      color: #e4e4e4;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .tabs {
+      border-bottom: 2px solid var(--pink-faded);
+    }
+
+    .tabs li.is-active a {
+      background: rgba(255, 192, 203, 0.2);
+      border-color: var(--pink-medium);
+      color: var(--pink-light) !important;
+    }
+
+    .tabs a {
+      color: var(--pink-light);
+      border-bottom-color: var(--pink-faded);
+      transition: all 0.3s ease;
+    }
+
+    .tabs a:hover {
+      background: rgba(255, 192, 203, 0.1);
+      border-bottom-color: var(--pink-medium);
+    }
+
+    .tab-box {
+      background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
+      border: 2px solid var(--pink-faded);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-title {
+      color: var(--pink-medium);
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 10px rgba(255, 192, 203, 0.15);
+    }
+
+    .project-description {
+      color: #e4e4e4;
+      line-height: 1.8;
+    }
+
+    .project-description li {
+      margin-bottom: 1.5rem;
+    }
+
+    .project-description strong {
+      color: var(--pink-light);
+    }
+
+    .project-description ul ul {
+      margin-top: 0.5rem;
+      margin-left: 1rem;
+    }
+
+    .project-description ul ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background: rgba(26, 26, 46, 0.95);
+      border-top: 2px solid var(--pink-faded);
+      margin-top: 4rem;
+      padding: 2rem 0;
+    }
+
+    footer p {
+      color: var(--pink-light);
+      opacity: 0.8;
+    }
+
+    @media (prefers-color-scheme: light) {
+      body {
+        background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 50%, #ffd4e5 100%);
+        color: #2d2d2d;
+      }
+
+      .navbar {
+        background: rgba(255, 255, 255, 0.95) !important;
+      }
+
+      .navbar-item, .navbar-link {
+        color: #d63384 !important;
+      }
+
+      .bio-card h1, .project-title {
+        color: #d63384;
+      }
+
+      .bio-card p, .project-description {
+        color: #2d2d2d;
+      }
+
+      .project-description strong {
+        color: #d63384;
+      }
+
+      footer {
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      footer p {
+        color: #d63384;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -14,7 +189,7 @@
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item" href="index.html">ER</a>
+        <a class="navbar-item" href="elizabethrodriguez/index.html">ER</a>
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
           <span aria-hidden="true"></span>
@@ -25,9 +200,9 @@
 
       <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="index.html">Home</a>
-          <a class="navbar-item" href="projects.html">Projects</a>
-          <a class="navbar-item" href="contact.html">Contact Me</a>
+          <a class="navbar-item" href="elizabethrodriguez/index.html">Home</a>
+          <a class="navbar-item" href="elizabethrodriguez/projects.html">Projects</a>
+          <a class="navbar-item" href="elizabethrodriguez/contact.html">Contact Me</a>
         </div>
       </div>
     </div>
@@ -45,7 +220,7 @@
       </div>
 
       <!-- Tabs -->
-      <div class="tabs is-centered is-boxed" style="margin-top: 2rem;">
+      <div class="tabs is-centered is-boxed">
         <ul>
           <li class="is-active" data-tab="experience"><a>Experience</a></li>
           <li data-tab="education"><a>Education</a></li>
