@@ -105,7 +105,7 @@
       margin-top: 2rem;
     }
 
-    .project-title {
+    .section-title {
       color: var(--pink-medium);
       font-size: 1.5rem;
       font-weight: bold;
@@ -113,26 +113,57 @@
       text-shadow: 0 0 10px rgba(255, 192, 203, 0.15);
     }
 
-    .project-description {
-      color: #e4e4e4;
-      line-height: 1.8;
+    .experience-item {
+      margin-bottom: 2rem;
     }
 
-    .project-description li {
+    .experience-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .date-text {
+      color: var(--pink-light);
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+      font-weight: 500;
+    }
+
+    .position-title {
+      color: var(--pink-medium);
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .description-list {
+      color: #e4e4e4;
+      line-height: 1.7;
+      margin-left: 1.2rem;
+    }
+
+    .description-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .education-item {
       margin-bottom: 1.5rem;
     }
 
-    .project-description strong {
-      color: var(--pink-light);
+    .education-item:last-child {
+      margin-bottom: 0;
     }
 
-    .project-description ul ul {
-      margin-top: 0.5rem;
-      margin-left: 1rem;
+    .degree-text {
+      color: #e4e4e4;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
     }
 
-    .project-description ul ul li {
-      margin-bottom: 0.5rem;
+    .minor-text {
+      color: #e4e4e4;
+      font-size: 0.95rem;
+      font-style: italic;
+      margin-top: 0.2rem;
     }
 
     footer {
@@ -161,15 +192,15 @@
         color: #d63384 !important;
       }
 
-      .bio-card h1, .project-title {
+      .bio-card h1, .section-title, .position-title {
         color: #d63384;
       }
 
-      .bio-card p, .project-description {
+      .bio-card p, .description-list, .degree-text, .minor-text {
         color: #2d2d2d;
       }
 
-      .project-description strong {
+      .date-text {
         color: #d63384;
       }
 
@@ -231,45 +262,47 @@
       <div class="tab-content">
         <!-- Experience -->
         <div class="tab-box" id="experience" style="display: block;">
-          <h3 class="project-title">Experience</h3>
-          <ul class="project-description">
-            <li><strong>Google's Computer Science Summer Institute</strong> – Atlanta, GA | July 2022 – August 2022
-              <ul>
-                <li>• Presented a web-based interactive musical instrument as a capstone project to Google engineers and community leaders.</li>
-                <li>• Completed a project-based web development curriculum in HTML, CSS, and JavaScript.</li>
-                <li>• Attended UX, product design, and software engineering interview workshops.</li>
-                <li>• Built and configured interactive web applications using JavaScript.</li>
-              </ul>
-            </li>
-            <li><strong>Dunkin Donuts</strong> – Atlanta, GA | Feb 2019 – Dec 2019
-              <ul>
-                <li>• Provided customer service, resolving inquiries and communication issues.</li>
-                <li>• Maintained store organization and assisted customers efficiently.</li>
-                <li>• Handled in-person inquiries to improve satisfaction.</li>
-                <li>• Worked collaboratively in a fast-paced team environment.</li>
-              </ul>
-            </li>
-          </ul>
+          <h3 class="section-title">Experience</h3>
+          
+          <div class="experience-item">
+            <div class="date-text">July 2022 – August 2022</div>
+            <div class="position-title">Google's Computer Science Summer Institute – Atlanta, GA</div>
+            <ul class="description-list">
+              <li>• Presented a web-based interactive musical instrument as a capstone project to Google engineers and community leaders.</li>
+              <li>• Completed a project-based web development curriculum in HTML, CSS, and JavaScript.</li>
+              <li>• Attended UX, product design, and software engineering interview workshops.</li>
+              <li>• Built and configured interactive web applications using JavaScript.</li>
+            </ul>
+          </div>
+
+          <div class="experience-item">
+            <div class="date-text">Feb 2019 – Dec 2019</div>
+            <div class="position-title">Dunkin Donuts – Atlanta, GA</div>
+            <ul class="description-list">
+              <li>• Provided customer service, resolving inquiries and communication issues.</li>
+              <li>• Maintained store organization and assisted customers efficiently.</li>
+              <li>• Handled in-person inquiries to improve satisfaction.</li>
+              <li>• Worked collaboratively in a fast-paced team environment.</li>
+            </ul>
+          </div>
         </div>
 
         <!-- Education -->
         <div class="tab-box" id="education" style="display: none;">
-          <h3 class="project-title">Education</h3>
-          <ul class="project-description">
-            <li><strong>Kennesaw State University</strong> – Kennesaw, GA
-              <ul>
-                <li>Bachelor of Science, Computer Science</li>
-                <li>Minor: Software Engineering</li>
-                <li>Expected Graduation: June 2026</li>
-              </ul>
-            </li>
-            <li><strong>Georgia Southern University</strong> – Statesboro, GA
-              <ul>
-                <li>Bachelor of Science, Computer Science</li>
-                <li>August 2022 – July 2024</li>
-              </ul>
-            </li>
-          </ul>
+          <h3 class="section-title">Education</h3>
+          
+          <div class="education-item">
+            <div class="date-text">Aug 2024 – Currently</div>
+            <div class="position-title">Kennesaw State University – Kennesaw, GA</div>
+            <div class="degree-text">BS in Computer Science</div>
+            <div class="minor-text">* Minor in Software Engineering</div>
+          </div>
+
+          <div class="education-item">
+            <div class="date-text">August 2022 – July 2024</div>
+            <div class="position-title">Georgia Southern University – Statesboro, GA</div>
+            <div class="degree-text">BS in Computer Science</div>
+          </div>
         </div>
       </div>
     </div>
