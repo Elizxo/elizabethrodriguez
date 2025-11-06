@@ -198,6 +198,18 @@
         color: #d63384;
       }
     }
+
+    /* Placeholder for missing images */
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--pink-light);
+      font-size: 1rem;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -239,7 +251,7 @@
           </p>
 
           <div class="image-container">
-            <img src="Shpe.png" alt="SHPE App Screenshot">
+            <div class="image-placeholder">SHPE App Screenshot</div>
           </div>
 
           <div class="tech-stack">
@@ -259,7 +271,7 @@
           </p>
 
           <div class="image-container">
-            <img src="Latin.jpeg" alt="Latin Dance Poster">
+            <div class="image-placeholder">Latin Dance Poster</div>
           </div>
 
           <div class="tech-stack">
@@ -275,11 +287,12 @@
           </p>
 
           <div class="image-container">
-            <img id="depop-image" src="design1.jpg" alt="Depop Fashion Design">
-            <div class="carousel-controls">
-              <button class="carousel-btn" id="prev-btn">◄ Previous</button>
-              <button class="carousel-btn" id="next-btn">Next ►</button>
-            </div>
+            <div class="image-placeholder" id="depop-image">Fashion Design 1</div>
+          </div>
+
+          <div class="carousel-controls" style="position: static; transform: none; margin-bottom: 1rem;">
+            <button class="carousel-btn" id="prev-btn">◄ Previous</button>
+            <button class="carousel-btn" id="next-btn">Next ►</button>
           </div>
 
           <div class="tech-stack">
@@ -295,11 +308,7 @@
           </p>
 
           <div class="image-container">
-            <img src="" alt="Project Screenshot">
-            <div class="carousel-controls">
-              <button class="carousel-btn">◄ Previous</button>
-              <button class="carousel-btn">Next ►</button>
-            </div>
+            <div class="image-placeholder">Project Screenshot</div>
           </div>
 
           <div class="tech-stack">
@@ -334,7 +343,7 @@
     });
 
     // Depop Fashion Designs Carousel
-    const depopImages = [
+    const depopDesigns = [
       'design1.jpg',
       'design2.jpg',
       'design3.jpg',
@@ -351,20 +360,19 @@
     const nextBtn = document.getElementById('next-btn');
 
     function showImage(index) {
-      depopImage.src = depopImages[index];
+      depopImage.textContent = depopDesigns[index];
     }
 
     prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + depopImages.length) % depopImages.length;
+      currentIndex = (currentIndex - 1 + depopDesigns.length) % depopDesigns.length;
       showImage(currentIndex);
     });
 
     nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % depopImages.length;
+      currentIndex = (currentIndex + 1) % depopDesigns.length;
       showImage(currentIndex);
     });
   </script>
 
 </body>
 </html>
-
