@@ -267,18 +267,18 @@
           </div>
         </div>
 
-        <!-- Blank Project Box 1 -->
-        <div class="project-box">
+        <!-- Depop Fashion Designs Project Box with Carousel -->
+        <div class="project-box" id="depop-project">
           <h3 class="project-title">Depop Fashion Designs</h3>
           <p class="project-description">
              Created original fashion designs and digital clothing concepts for Depop, focusing on style, color palettes, and aesthetic appeal.
           </p>
 
           <div class="image-container">
-            <img src="" alt="Project Screenshot">
+            <img id="depop-image" src="design1.jpg" alt="Depop Fashion Design">
             <div class="carousel-controls">
-              <button class="carousel-btn">◄ Previous</button>
-              <button class="carousel-btn">Next ►</button>
+              <button class="carousel-btn" id="prev-btn">◄ Previous</button>
+              <button class="carousel-btn" id="next-btn">Next ►</button>
             </div>
           </div>
 
@@ -287,7 +287,7 @@
           </div>
         </div>
 
-        <!-- Blank Project Box 2 -->
+        <!-- Blank Project Box -->
         <div class="project-box">
           <h3 class="project-title">Project Title</h3>
           <p class="project-description">
@@ -331,6 +331,37 @@
           menu.classList.toggle('is-active');
         });
       });
+    });
+
+    // Depop Fashion Designs Carousel
+    const depopImages = [
+      'design1.jpg',
+      'design2.jpg',
+      'design3.jpg',
+      'design4.jpg',
+      'design5.jpg',
+      'design6.jpg',
+      'design7.jpg',
+      'design8.jpg',
+      'design9.jpg'
+    ];
+    let currentIndex = 0;
+    const depopImage = document.getElementById('depop-image');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    function showImage(index) {
+      depopImage.src = depopImages[index];
+    }
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + depopImages.length) % depopImages.length;
+      showImage(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % depopImages.length;
+      showImage(currentIndex);
     });
   </script>
 
