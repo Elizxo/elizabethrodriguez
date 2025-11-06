@@ -126,18 +126,19 @@
     }
 
     .carousel-btn {
-      background: rgba(255, 192, 203, 0.3);
-      border: 1px solid var(--pink-light);
-      color: var(--pink-light);
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
+    background: rgba(255, 192, 203, 0.3); /* keep light pink background */
+    border: 1px solid var(--pink-light);
+    color: var(--pink-dark); /* darker text for contrast */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
     }
 
     .carousel-btn:hover {
-      background: rgba(255, 192, 203, 0.5);
-      transform: scale(1.05);
+    background: rgba(255, 192, 203, 0.5); /* subtle hover change */
+    color: #ff4f9a; /* slightly richer dark pink when hovered */
+    transform: scale(1.05);
     }
 
     .tech-stack {
