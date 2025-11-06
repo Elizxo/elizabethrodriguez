@@ -174,6 +174,58 @@
       opacity: 0.8;
     }
 
+    /* Light mode class toggle */
+    body.light-mode {
+      background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 50%, #ffd4e5 100%);
+      color: #2d2d2d;
+    }
+
+    body.light-mode .navbar {
+      background: rgba(255, 255, 255, 0.95) !important;
+    }
+
+    body.light-mode .navbar-item,
+    body.light-mode .navbar-link {
+      color: #d63384 !important;
+    }
+
+    body.light-mode .section-title,
+    body.light-mode .project-title {
+      color: #d63384;
+    }
+
+    body.light-mode .project-description {
+      color: #2d2d2d;
+    }
+
+    body.light-mode .tech-tag {
+      background: rgba(255, 20, 147, 0.7);
+      border: 1px solid #ff1493;
+      color: #ffffff;
+    }
+
+    body.light-mode .tech-tag:hover {
+      background: rgba(255, 20, 147, 0.85);
+    }
+
+    body.light-mode .carousel-btn {
+      background: rgba(255, 20, 147, 0.6);
+      border: 1px solid #ff1493;
+      color: #ffffff;
+    }
+
+    body.light-mode .carousel-btn:hover {
+      background: rgba(255, 20, 147, 0.8);
+    }
+
+    body.light-mode footer {
+      background: rgba(255, 255, 255, 0.95);
+    }
+
+    body.light-mode footer p {
+      color: #d63384;
+    }
+
     @media (prefers-color-scheme: light) {
       body {
         background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 50%, #ffd4e5 100%);
@@ -192,12 +244,20 @@
         color: #2d2d2d;
       }
       .tech-tag {
-        background: rgba(139, 0, 139, 0.6);
-        border: 1px solid #8b008b;
+        background: rgba(255, 20, 147, 0.7);
+        border: 1px solid #ff1493;
         color: #ffffff;
       }
       .tech-tag:hover {
-        background: rgba(139, 0, 139, 0.8);
+        background: rgba(255, 20, 147, 0.85);
+      }
+      .carousel-btn {
+        background: rgba(255, 20, 147, 0.6);
+        border: 1px solid #ff1493;
+        color: #ffffff;
+      }
+      .carousel-btn:hover {
+        background: rgba(255, 20, 147, 0.8);
       }
       footer {
         background: rgba(255, 255, 255, 0.95);
@@ -209,6 +269,9 @@
   </style>
 </head>
 <body>
+
+  <!-- Theme Toggle Button for Demo -->
+  <button style="position: fixed; top: 20px; right: 20px; background: rgba(255, 192, 203, 0.3); border: 2px solid var(--pink-light); color: var(--pink-light); padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: bold; z-index: 1000; transition: all 0.3s ease;" onclick="toggleTheme()">Toggle Light/Dark Mode</button>
 
   <!-- Navigation -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -329,6 +392,11 @@
 
   <!-- JavaScript -->
   <script>
+    // Theme toggle function for demo
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+    }
+
     // Mobile navbar toggle
     document.addEventListener('DOMContentLoaded', () => {
       const burgers = document.querySelectorAll('.navbar-burger');
