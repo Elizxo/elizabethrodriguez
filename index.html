@@ -1,328 +1,376 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elizabeth Rodriguez - Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elizabeth Rodriguez - Home</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <style>
+        :root {
+            --pink-light: #ffc0cb;
+            --pink-medium: #ffb6c1;
+            --pink-dark: #ff69b4;
+            --pink-faded: rgba(255, 192, 203, 0.15);
+            --pink-faded-strong: rgba(255, 192, 203, 0.25);
+        }
 
-  <!-- Bulma CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e4e4e4;
+        }
 
-  <style>
-    :root {
-      --pink-light: #ffc0cb;
-      --pink-medium: #ffb6c1;
-      --pink-dark: #ff69b4;
-      --pink-faded: rgba(255, 192, 203, 0.15);
-      --pink-faded-strong: rgba(255, 192, 203, 0.25);
-    }
+        .navbar {
+            background: rgba(26, 26, 46, 0.95) !important;
+            border-bottom: 2px solid var(--pink-faded);
+            backdrop-filter: blur(10px);
+        }
 
-    body {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-      min-height: 100vh;
-      color: #e4e4e4;
-    }
+        .navbar-item, .navbar-link {
+            color: var(--pink-light) !important;
+            transition: all 0.3s ease;
+        }
 
-    .navbar {
-      background: rgba(26, 26, 46, 0.95) !important;
-      border-bottom: 2px solid var(--pink-faded);
-      backdrop-filter: blur(10px);
-    }
+        .navbar-item:hover, .navbar-link:hover {
+            background-color: var(--pink-faded) !important;
+            color: var(--pink-dark) !important;
+        }
 
-    .navbar-item, .navbar-link {
-      color: var(--pink-light) !important;
-      transition: all 0.3s ease;
-    }
+        .navbar-brand .navbar-item {
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
 
-    .navbar-item:hover, .navbar-link:hover {
-      background-color: var(--pink-faded) !important;
-      color: var(--pink-dark) !important;
-    }
+        .navbar-burger span {
+            background-color: var(--pink-dark) !important;
+        }
 
-    .bio-section {
-      max-width: 900px;
-      margin: 0 auto;
-    }
+        .bio-section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-    .bio-card {
-      background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
-      border: 2px solid var(--pink-faded);
-      border-radius: 15px;
-      padding: 2.5rem;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+        .bio-card {
+            background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
+            border: 2px solid var(--pink-faded);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
 
-    .bio-card h1 {
-      color: var(--pink-medium);
-      font-size: 1.8rem;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 0 15px rgba(255, 192, 203, 0.2);
-    }
+        .bio-card h1 {
+            color: var(--pink-medium);
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 15px rgba(255, 192, 203, 0.2);
+        }
 
-    .bio-card p {
-      color: #e4e4e4;
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
+        .bio-card p {
+            color: #e4e4e4;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
 
-    .tabs {
-      border-bottom: 2px solid var(--pink-faded);
-    }
+        .tabs {
+            border-bottom: 2px solid var(--pink-faded);
+        }
 
-    .tabs li.is-active a {
-      background: rgba(255, 192, 203, 0.2);
-      border-color: var(--pink-medium);
-      color: var(--pink-light) !important;
-    }
+        .tabs li.is-active a {
+            background: rgba(255, 192, 203, 0.2);
+            border-color: var(--pink-medium);
+            color: var(--pink-light) !important;
+        }
 
-    .tabs a {
-      color: var(--pink-light);
-      border-bottom-color: var(--pink-faded);
-      transition: all 0.3s ease;
-    }
+        .tabs a {
+            color: var(--pink-light);
+            border-bottom-color: var(--pink-faded);
+            transition: all 0.3s ease;
+        }
 
-    .tabs a:hover {
-      background: rgba(255, 192, 203, 0.1);
-      border-bottom-color: var(--pink-medium);
-    }
+        .tabs a:hover {
+            background: rgba(255, 192, 203, 0.1);
+            border-bottom-color: var(--pink-medium);
+        }
 
-    .tabs.is-centered.is-boxed li a {
-      padding-left: 3rem;
-      padding-right: 3rem;
-    }
+        /* Updated padding for Education & Experience buttons */
+        .tabs.is-centered.is-boxed li a {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
 
-    .tab-box {
-      background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
-      border: 2px solid var(--pink-faded);
-      border-radius: 12px;
-      padding: 2rem;
-      margin-top: 2rem;
-    }
+        .tab-box {
+            background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
+            border: 2px solid var(--pink-faded);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
 
-    .section-title {
-      color: var(--pink-medium);
-      font-size: 1.5rem;
-      font-weight: bold;
-      margin-bottom: 1.5rem;
-      text-shadow: 0 0 10px rgba(255, 192, 203, 0.15);
-    }
+        .section-title {
+            color: var(--pink-medium);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px rgba(255, 192, 203, 0.15);
+        }
 
-    .experience-item {
-      margin-bottom: 2rem;
-    }
+        .experience-item {
+            margin-bottom: 2rem;
+        }
 
-    .experience-item:last-child {
-      margin-bottom: 0;
-    }
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
 
-    .date-text {
-      color: var(--pink-light);
-      font-size: 0.9rem;
-      margin-bottom: 0.3rem;
-      font-weight: 500;
-    }
+        .date-text {
+            color: var(--pink-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
 
-    .position-title {
-      color: var(--pink-medium);
-      font-size: 26.4px; /* matches provided title height */
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
+        .position-title {
+            color: var(--pink-medium);
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .position-icon {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
 
-    .position-title img {
-      height: 26.4px; /* match title height */
-      width: auto;
-    }
+        .description-list {
+            color: #e4e4e4;
+            line-height: 1.7;
+            margin-left: 1.2rem;
+        }
 
-    .description-list {
-      color: #e4e4e4;
-      line-height: 1.7;
-      margin-left: 1.2rem;
-    }
+        .description-list li {
+            margin-bottom: 0.4rem;
+        }
 
-    .description-list li {
-      margin-bottom: 0.4rem;
-    }
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
 
-    .education-item {
-      margin-bottom: 1.5rem;
-    }
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
 
-    .education-item:last-child {
-      margin-bottom: 0;
-    }
+        .degree-text {
+            color: #e4e4e4;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
 
-    .degree-text {
-      color: #e4e4e4;
-      font-size: 1rem;
-      margin-bottom: 0.2rem;
-    }
+        .minor-text {
+            color: #e4e4e4;
+            font-size: 0.95rem;
+            font-style: italic;
+            margin-top: 0.2rem;
+        }
 
-    .minor-text {
-      color: #e4e4e4;
-      font-size: 0.95rem;
-      font-style: italic;
-      margin-top: 0.2rem;
-    }
+        footer {
+            background: rgba(26, 26, 46, 0.95);
+            border-top: 2px solid var(--pink-faded);
+            margin-top: 4rem;
+            padding: 2rem 0;
+        }
 
-    footer {
-      background: rgba(26, 26, 46, 0.95);
-      border-top: 2px solid var(--pink-faded);
-      margin-top: 4rem;
-      padding: 2rem 0;
-    }
+        footer p {
+            color: var(--pink-light);
+            opacity: 0.8;
+        }
 
-    footer p {
-      color: var(--pink-light);
-      opacity: 0.8;
-    }
-  </style>
+        @media (prefers-color-scheme: light) {
+            body {
+                background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 50%, #ffd4e5 100%);
+                color: #2d2d2d;
+            }
+
+            .navbar {
+                background: rgba(255, 255, 255, 0.95) !important;
+            }
+
+            .navbar-item, .navbar-link {
+                color: #d63384 !important;
+            }
+
+            .bio-card h1, .section-title, .position-title {
+                color: #d63384;
+            }
+
+            .bio-card p, .description-list, .degree-text, .minor-text {
+                color: #2d2d2d;
+            }
+
+            .date-text {
+                color: #d63384;
+            }
+
+            footer {
+                background: rgba(255, 255, 255, 0.95);
+            }
+
+            footer p {
+                color: #d63384;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="container">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="index.html">ER</a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="navbarMenu" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="index.html">Home</a>
-          <a class="navbar-item" href="projects.html">Projects</a>
-          <a class="navbar-item" href="contact.html">Contact Me</a>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <section class="section" style="margin-top: 3rem;">
-    <div class="bio-section">
-      <div class="bio-card">
-        <h1>Hey there, I'm Elizabeth Rodriguez</h1>
-        <p>
-          a developer with a love for bringing creative, innovative ideas to life.
-          I design and deploy projects that inspire me with a touch of my imagination.
-        </p>
-      </div>
-
-      <div class="tabs is-centered is-boxed">
-        <ul>
-          <li class="is-active" data-tab="experience"><a>Experience</a></li>
-          <li data-tab="education"><a>Education</a></li>
-        </ul>
-      </div>
-
-      <div class="tab-content">
-        <div class="tab-box" id="experience" style="display: block;">
-          <h3 class="section-title">Experience</h3>
-
-          <!-- Caregiver / Tutor -->
-          <div class="experience-item">
-            <div class="date-text">2024 – Currently</div>
-            <div class="position-title">
-              <img src="care_icon.png" alt="Care Icon">
-              Caregiver / Tutor – Marietta & Kennesaw, GA
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html">ER</a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
-            <ul class="description-list">
-              <li>• Provide caregiving support while tutoring students in Math, English, Spanish, and STEM.</li>
-              <li>• Develop personalized lesson plans tailored to each student's needs and abilities.</li>
-              <li>• Monitor student progress and adjust teaching methods for optimal learning outcomes.</li>
-            </ul>
-          </div>
-
-          <!-- Google CS Summer Institute -->
-          <div class="experience-item">
-            <div class="date-text">July 2022 – August 2022</div>
-            <div class="position-title">
-              <img src="google_icon.png" alt="Google Icon">
-              Google's Computer Science Summer Institute – Atlanta, GA
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="index.html">Home</a>
+                    <a class="navbar-item" href="projects.html">Projects</a>
+                    <a class="navbar-item" href="contact.html">Contact Me</a>
+                </div>
             </div>
-            <ul class="description-list">
-              <li>• Presented a web-based interactive musical instrument as a capstone project.</li>
-              <li>• Completed a project-based web development curriculum in HTML, CSS, and JavaScript.</li>
-              <li>• Attended UX, product design, and software engineering workshops.</li>
-            </ul>
-          </div>
+        </div>
+    </nav>
 
-          <!-- Dunkin Donuts -->
-          <div class="experience-item">
-            <div class="date-text">Feb 2019 – Dec 2019</div>
-            <div class="position-title">
-              <img src="dkin_icon.png" alt="Dunkin Icon">
-              Dunkin Donuts – Atlanta, GA
+    <!-- Bio Section -->
+    <section class="section" style="margin-top: 3rem;">
+        <div class="bio-section">
+            <div class="bio-card">
+                <h1>Hey there, I'm Elizabeth Rodriguez</h1>
+                <p>
+                    a developer with a love for bringing creative, innovative ideas to life. I design and deploy projects that inspire me with a touch of my imagination.
+                </p>
             </div>
-            <ul class="description-list">
-              <li>• Provided excellent customer service and handled orders efficiently.</li>
-              <li>• Maintained store organization and cleanliness in a fast-paced environment.</li>
-              <li>• Worked collaboratively to ensure smooth daily operations.</li>
-            </ul>
-          </div>
 
+            <!-- Tabs -->
+            <div class="tabs is-centered is-boxed">
+                <ul>
+                    <li class="is-active" data-tab="experience"><a>Experience</a></li>
+                    <li data-tab="education"><a>Education</a></li>
+                </ul>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Experience -->
+                <div class="tab-box" id="experience" style="display: block;">
+                    <h3 class="section-title">Experience</h3>
+                    
+                    <div class="experience-item">
+                        <div class="date-text">2024 – Currently</div>
+                        <div class="position-title">
+                            <img src="care icon.png" alt="Care Icon" class="position-icon">
+                            Tutor – Kennesaw, GA
+                        </div>
+                        <ul class="description-list">
+                            <li>• Provide caregiving support while tutoring students in Math, English, Spanish, and STEM.</li>
+                            <li>• Develop personalized lesson plans tailored to each student's needs and abilities.</li>
+                            <li>• Monitor student progress and adjust teaching methods for optimal learning outcomes.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="date-text">July 2022 – August 2022</div>
+                        <div class="position-title">
+                            <img src="google icon.png" alt="Google Icon" class="position-icon">
+                            Google's Computer Science Summer Institute – Atlanta, GA
+                        </div>
+                        <ul class="description-list">
+                            <li>• Presented a web-based interactive musical instrument as a capstone project to Google engineers and community leaders.</li>
+                            <li>• Completed a project-based web development curriculum in HTML, CSS, and JavaScript.</li>
+                            <li>• Attended UX, product design, and software engineering interview workshops.</li>
+                            <li>• Built and configured interactive web applications using JavaScript.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="date-text">Feb 2019 – Dec 2019</div>
+                        <div class="position-title">
+                            <img src="dkin icon.png" alt="Dunkin Icon" class="position-icon">
+                            Dunkin Donuts – Atlanta, GA
+                        </div>
+                        <ul class="description-list">
+                            <li>• Provided customer service, resolving inquiries and communication issues.</li>
+                            <li>• Maintained store organization and assisted customers efficiently.</li>
+                            <li>• Handled in-person inquiries to improve satisfaction.</li>
+                            <li>• Worked collaboratively in a fast-paced team environment.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="tab-box" id="education" style="display: none;">
+                    <h3 class="section-title">Education</h3>
+                    
+                    <div class="education-item">
+                        <div class="date-text">Aug 2024 – Currently</div>
+                        <div class="position-title">Kennesaw State University – Kennesaw, GA</div>
+                        <div class="degree-text">BS in Computer Science</div>
+                        <div class="minor-text">* Minor in Software Engineering</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="date-text">August 2022 – July 2024</div>
+                        <div class="position-title">Georgia Southern University – Statesboro, GA</div>
+                        <div class="degree-text">BS in Computer Science</div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="tab-box" id="education" style="display: none;">
-          <h3 class="section-title">Education</h3>
-          <div class="education-item">
-            <div class="date-text">Aug 2024 – Currently</div>
-            <div class="position-title">Kennesaw State University – Kennesaw, GA</div>
-            <div class="degree-text">BS in Computer Science</div>
-            <div class="minor-text">* Minor in Software Engineering</div>
-          </div>
-
-          <div class="education-item">
-            <div class="date-text">August 2022 – July 2024</div>
-            <div class="position-title">Georgia Southern University – Statesboro, GA</div>
-            <div class="degree-text">BS in Computer Science</div>
-          </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p><strong>Elizabeth Rodriguez</strong> © 2024</p>
         </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p><strong>Elizabeth Rodriguez</strong> © 2024</p>
-    </div>
-  </footer>
+    <!-- JavaScript for navbar + tabs -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar burger toggle
+            const burgers = document.querySelectorAll('.navbar-burger');
+            burgers.forEach(burger => {
+                burger.addEventListener('click', () => {
+                    const target = burger.dataset.target;
+                    const menu = document.getElementById(target);
+                    burger.classList.toggle('is-active');
+                    menu.classList.toggle('is-active');
+                });
+            });
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const burgers = document.querySelectorAll('.navbar-burger');
-      burgers.forEach(burger => {
-        burger.addEventListener('click', () => {
-          const target = burger.dataset.target;
-          const menu = document.getElementById(target);
-          burger.classList.toggle('is-active');
-          menu.classList.toggle('is-active');
+            // Tabs switching
+            const tabs = document.querySelectorAll('.tabs li');
+            const boxes = document.querySelectorAll('.tab-box');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('is-active'));
+                    tab.classList.add('is-active');
+                    boxes.forEach(box => box.style.display = 'none');
+                    const tabId = tab.dataset.tab;
+                    document.getElementById(tabId).style.display = 'block';
+                });
+            });
         });
-      });
-
-      const tabs = document.querySelectorAll('.tabs li');
-      const boxes = document.querySelectorAll('.tab-box');
-
-      tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          tabs.forEach(t => t.classList.remove('is-active'));
-          tab.classList.add('is-active');
-          boxes.forEach(box => box.style.display = 'none');
-          const tabId = tab.dataset.tab;
-          document.getElementById(tabId).style.display = 'block';
-        });
-      });
-    });
-  </script>
-
+    </script>
 </body>
 </html>
