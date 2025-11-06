@@ -174,58 +174,6 @@
       opacity: 0.8;
     }
 
-    /* Light mode class toggle */
-    body.light-mode {
-      background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 50%, #ffd4e5 100%);
-      color: #2d2d2d;
-    }
-
-    body.light-mode .navbar {
-      background: rgba(255, 255, 255, 0.95) !important;
-    }
-
-    body.light-mode .navbar-item,
-    body.light-mode .navbar-link {
-      color: #d63384 !important;
-    }
-
-    body.light-mode .section-title,
-    body.light-mode .project-title {
-      color: #d63384;
-    }
-
-    body.light-mode .project-description {
-      color: #2d2d2d;
-    }
-
-    body.light-mode .tech-tag {
-      background: rgba(255, 20, 147, 0.7);
-      border: 1px solid #ff1493;
-      color: #ffffff;
-    }
-
-    body.light-mode .tech-tag:hover {
-      background: rgba(255, 20, 147, 0.85);
-    }
-
-    body.light-mode .carousel-btn {
-      background: rgba(255, 20, 147, 0.6);
-      border: 1px solid #ff1493;
-      color: #ffffff;
-    }
-
-    body.light-mode .carousel-btn:hover {
-      background: rgba(255, 20, 147, 0.8);
-    }
-
-    body.light-mode footer {
-      background: rgba(255, 255, 255, 0.95);
-    }
-
-    body.light-mode footer p {
-      color: #d63384;
-    }
-
     @media (prefers-color-scheme: light) {
       body {
         background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 50%, #ffd4e5 100%);
@@ -243,22 +191,6 @@
       .project-description {
         color: #2d2d2d;
       }
-      .tech-tag {
-        background: rgba(255, 20, 147, 0.7);
-        border: 1px solid #ff1493;
-        color: #ffffff;
-      }
-      .tech-tag:hover {
-        background: rgba(255, 20, 147, 0.85);
-      }
-      .carousel-btn {
-        background: rgba(255, 20, 147, 0.6);
-        border: 1px solid #ff1493;
-        color: #ffffff;
-      }
-      .carousel-btn:hover {
-        background: rgba(255, 20, 147, 0.8);
-      }
       footer {
         background: rgba(255, 255, 255, 0.95);
       }
@@ -269,9 +201,6 @@
   </style>
 </head>
 <body>
-
-  <!-- Theme Toggle Button for Demo -->
-  <button style="position: fixed; top: 20px; right: 20px; background: rgba(255, 192, 203, 0.3); border: 2px solid var(--pink-light); color: var(--pink-light); padding: 0.75rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: bold; z-index: 1000; transition: all 0.3s ease;" onclick="toggleTheme()">Toggle Light/Dark Mode</button>
 
   <!-- Navigation -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -322,11 +251,12 @@
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Project 2 : KSU Connect -->
         <div class="project-box">
           <h3 class="project-title">KSU Connect</h3>
           <p class="project-description">
-            Developed a web-based app/mobile app enabling students to connect with peers attending the same event. I worked on the frontend and supported the back end and created the UI/UX designs.
+            Developed a web-based app/mobile app enabling students to connect with peers attending the same event. 
+            I worked on the frontend and supported the backend and created the UI/UX designs.
           </p>
 
           <div class="image-container">
@@ -363,11 +293,12 @@
           </div>
         </div>
 
-        <!-- Latin Dance Culture Awareness Campaign Project Box -->
+        <!-- Project 4 : Latin Dance Culture Awareness Campaign -->
         <div class="project-box">
           <h3 class="project-title">Latin Dance Culture Awareness Campaign</h3>
           <p class="project-description">
-            Designed accompaniments for club intensives to promote Latin rhythm and share awareness through dance. Dance brings culture together and tells stories of community, resilience, and joy.
+            Designed accompaniments for club intensives to promote Latin rhythm and share awareness through dance. 
+            Dance brings culture together and tells stories of community, resilience, and joy.
           </p>
 
           <div class="image-container">
@@ -378,7 +309,6 @@
             <span class="tech-tag">Canva</span>
           </div>
         </div>
-
       </div> <!-- end of projects-grid -->
     </div>
   </section>
@@ -392,11 +322,6 @@
 
   <!-- JavaScript -->
   <script>
-    // Theme toggle function for demo
-    function toggleTheme() {
-      document.body.classList.toggle('light-mode');
-    }
-
     // Mobile navbar toggle
     document.addEventListener('DOMContentLoaded', () => {
       const burgers = document.querySelectorAll('.navbar-burger');
