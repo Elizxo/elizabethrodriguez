@@ -39,15 +39,6 @@
       color: var(--pink-dark) !important;
     }
 
-    .navbar-brand .navbar-item {
-      font-weight: bold;
-      font-size: 1.3rem;
-    }
-
-    .navbar-burger span {
-      background-color: var(--pink-dark) !important;
-    }
-
     .bio-section {
       max-width: 900px;
       margin: 0 auto;
@@ -97,7 +88,6 @@
       border-bottom-color: var(--pink-medium);
     }
 
-    /* Updated padding for Education & Experience buttons */
     .tabs.is-centered.is-boxed li a {
       padding-left: 3rem;
       padding-right: 3rem;
@@ -136,9 +126,17 @@
 
     .position-title {
       color: var(--pink-medium);
-      font-size: 1.1rem;
+      font-size: 26.4px; /* matches provided title height */
       font-weight: bold;
       margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .position-title img {
+      height: 26.4px; /* match title height */
+      width: auto;
     }
 
     .description-list {
@@ -183,41 +181,6 @@
       color: var(--pink-light);
       opacity: 0.8;
     }
-
-    @media (prefers-color-scheme: light) {
-      body {
-        background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 50%, #ffd4e5 100%);
-        color: #2d2d2d;
-      }
-
-      .navbar {
-        background: rgba(255, 255, 255, 0.95) !important;
-      }
-
-      .navbar-item, .navbar-link {
-        color: #d63384 !important;
-      }
-
-      .bio-card h1, .section-title, .position-title {
-        color: #d63384;
-      }
-
-      .bio-card p, .description-list, .degree-text, .minor-text {
-        color: #2d2d2d;
-      }
-
-      .date-text {
-        color: #d63384;
-      }
-
-      footer {
-        background: rgba(255, 255, 255, 0.95);
-      }
-
-      footer p {
-        color: #d63384;
-      }
-    }
   </style>
 </head>
 <body>
@@ -227,7 +190,6 @@
     <div class="container">
       <div class="navbar-brand">
         <a class="navbar-item" href="index.html">ER</a>
-
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -245,7 +207,6 @@
     </div>
   </nav>
 
-  <!-- Bio Section -->
   <section class="section" style="margin-top: 3rem;">
     <div class="bio-section">
       <div class="bio-card">
@@ -256,7 +217,6 @@
         </p>
       </div>
 
-      <!-- Tabs -->
       <div class="tabs is-centered is-boxed">
         <ul>
           <li class="is-active" data-tab="experience"><a>Experience</a></li>
@@ -264,39 +224,56 @@
         </ul>
       </div>
 
-      <!-- Tab Content -->
       <div class="tab-content">
-        <!-- Experience -->
         <div class="tab-box" id="experience" style="display: block;">
           <h3 class="section-title">Experience</h3>
-          
+
+          <!-- Caregiver / Tutor -->
+          <div class="experience-item">
+            <div class="date-text">2024 – Currently</div>
+            <div class="position-title">
+              <img src="care_icon.png" alt="Care Icon">
+              Caregiver / Tutor – Marietta & Kennesaw, GA
+            </div>
+            <ul class="description-list">
+              <li>• Provide caregiving support while tutoring students in Math, English, Spanish, and STEM.</li>
+              <li>• Develop personalized lesson plans tailored to each student's needs and abilities.</li>
+              <li>• Monitor student progress and adjust teaching methods for optimal learning outcomes.</li>
+            </ul>
+          </div>
+
+          <!-- Google CS Summer Institute -->
           <div class="experience-item">
             <div class="date-text">July 2022 – August 2022</div>
-            <div class="position-title">Google's Computer Science Summer Institute – Atlanta, GA</div>
+            <div class="position-title">
+              <img src="google_icon.png" alt="Google Icon">
+              Google's Computer Science Summer Institute – Atlanta, GA
+            </div>
             <ul class="description-list">
-              <li>• Presented a web-based interactive musical instrument as a capstone project to Google engineers and community leaders.</li>
+              <li>• Presented a web-based interactive musical instrument as a capstone project.</li>
               <li>• Completed a project-based web development curriculum in HTML, CSS, and JavaScript.</li>
-              <li>• Attended UX, product design, and software engineering interview workshops.</li>
-              <li>• Built and configured interactive web applications using JavaScript.</li>
+              <li>• Attended UX, product design, and software engineering workshops.</li>
             </ul>
           </div>
 
+          <!-- Dunkin Donuts -->
           <div class="experience-item">
             <div class="date-text">Feb 2019 – Dec 2019</div>
-            <div class="position-title">Dunkin Donuts – Atlanta, GA</div>
+            <div class="position-title">
+              <img src="dkin_icon.png" alt="Dunkin Icon">
+              Dunkin Donuts – Atlanta, GA
+            </div>
             <ul class="description-list">
-              <li>• Provided customer service, resolving inquiries and communication issues.</li>
-              <li>• Maintained store organization and assisted customers efficiently.</li>
-              <li>• Handled in-person inquiries to improve satisfaction.</li>
-              <li>• Worked collaboratively in a fast-paced team environment.</li>
+              <li>• Provided excellent customer service and handled orders efficiently.</li>
+              <li>• Maintained store organization and cleanliness in a fast-paced environment.</li>
+              <li>• Worked collaboratively to ensure smooth daily operations.</li>
             </ul>
           </div>
+
         </div>
 
-        <!-- Education -->
         <div class="tab-box" id="education" style="display: none;">
           <h3 class="section-title">Education</h3>
-          
           <div class="education-item">
             <div class="date-text">Aug 2024 – Currently</div>
             <div class="position-title">Kennesaw State University – Kennesaw, GA</div>
@@ -314,17 +291,14 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="content has-text-centered">
       <p><strong>Elizabeth Rodriguez</strong> © 2024</p>
     </div>
   </footer>
 
-  <!-- JavaScript for navbar + tabs -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Navbar burger toggle
       const burgers = document.querySelectorAll('.navbar-burger');
       burgers.forEach(burger => {
         burger.addEventListener('click', () => {
@@ -335,7 +309,6 @@
         });
       });
 
-      // Tabs switching
       const tabs = document.querySelectorAll('.tabs li');
       const boxes = document.querySelectorAll('.tab-box');
 
