@@ -1,372 +1,376 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elizabeth Rodriguez - Projects</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elizabeth Rodriguez - Home</title>
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <style>
+        :root {
+            --pink-light: #ffc0cb;
+            --pink-medium: #ffb6c1;
+            --pink-dark: #ff69b4;
+            --pink-faded: rgba(255, 192, 203, 0.15);
+            --pink-faded-strong: rgba(255, 192, 203, 0.25);
+        }
 
-  <!-- Bulma CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e4e4e4;
+        }
 
-  <style>
-    :root {
-      --pink-light: #ffc0cb;
-      --pink-medium: #ffb6c1;
-      --pink-dark: #ff69b4;
-      --pink-faded: rgba(255, 192, 203, 0.15);
-      --pink-faded-strong: rgba(255, 192, 203, 0.25);
-    }
+        .navbar {
+            background: rgba(26, 26, 46, 0.95) !important;
+            border-bottom: 2px solid var(--pink-faded);
+            backdrop-filter: blur(10px);
+        }
 
-    body {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-      min-height: 100vh;
-      color: #e4e4e4;
-    }
+        .navbar-item, .navbar-link {
+            color: var(--pink-light) !important;
+            transition: all 0.3s ease;
+        }
 
-    .navbar {
-      background: rgba(26, 26, 46, 0.95) !important;
-      border-bottom: 2px solid var(--pink-faded);
-      backdrop-filter: blur(10px);
-    }
+        .navbar-item:hover, .navbar-link:hover {
+            background-color: var(--pink-faded) !important;
+            color: var(--pink-dark) !important;
+        }
 
-    .navbar-item, .navbar-link {
-      color: var(--pink-light) !important;
-      transition: all 0.3s ease;
-    }
+        .navbar-brand .navbar-item {
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
 
-    .navbar-item:hover, .navbar-link:hover {
-      background-color: var(--pink-faded) !important;
-      color: var(--pink-dark) !important;
-    }
+        .navbar-burger span {
+            background-color: var(--pink-dark) !important;
+        }
 
-    .navbar-brand .navbar-item {
-      font-weight: bold;
-      font-size: 1.3rem;
-    }
+        .bio-section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
 
-    .navbar-burger span {
-      background-color: var(--pink-dark) !important;
-    }
+        .bio-card {
+            background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
+            border: 2px solid var(--pink-faded);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
 
-    .section-title {
-      color: var(--pink-medium);
-      border-bottom: 3px solid var(--pink-faded-strong);
-      padding-bottom: 1rem;
-      margin-bottom: 2rem;
-      display: inline-block;
-      text-shadow: 0 0 15px rgba(255, 192, 203, 0.2);
-    }
+        .bio-card h1 {
+            color: var(--pink-medium);
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 15px rgba(255, 192, 203, 0.2);
+        }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+        .bio-card p {
+            color: #e4e4e4;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
 
-    .project-box {
-      background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
-      border: 2px solid var(--pink-faded);
-      border-radius: 12px;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-    }
+        .tabs {
+            border-bottom: 2px solid var(--pink-faded);
+        }
 
-    @media (max-width: 768px) {
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-    }
+        .tabs li.is-active a {
+            background: rgba(255, 192, 203, 0.2);
+            border-color: var(--pink-medium);
+            color: var(--pink-light) !important;
+        }
 
-    .project-title {
-      color: var(--pink-light);
-      font-size: 1.3rem;
-      font-weight: bold;
-      margin-bottom: 0.75rem;
-    }
+        .tabs a {
+            color: var(--pink-light);
+            border-bottom-color: var(--pink-faded);
+            transition: all 0.3s ease;
+        }
 
-    .project-description {
-      color: #e4e4e4;
-      font-size: 1rem;
-      line-height: 1.5;
-      margin-bottom: 1rem;
-    }
+        .tabs a:hover {
+            background: rgba(255, 192, 203, 0.1);
+            border-bottom-color: var(--pink-medium);
+        }
 
-    .image-container {
-      background: rgba(255, 192, 203, 0.05);
-      border: 2px dashed var(--pink-faded);
-      border-radius: 10px;
-      height: 250px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
-      position: relative;
-      overflow: hidden;
-    }
+        /* Updated padding for Education & Experience buttons */
+        .tabs.is-centered.is-boxed li a {
+            padding-left: 3rem;
+            padding-right: 3rem;
+        }
 
-    .image-container img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      border-radius: 8px;
-    }
+        .tab-box {
+            background: linear-gradient(135deg, rgba(255, 192, 203, 0.1) 0%, rgba(255, 105, 180, 0.05) 100%);
+            border: 2px solid var(--pink-faded);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
 
-    .carousel-controls {
-      position: absolute;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 0.5rem;
-    }
+        .section-title {
+            color: var(--pink-medium);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px rgba(255, 192, 203, 0.15);
+        }
 
-    .carousel-btn {
-      background: rgba(255, 192, 203, 0.3);
-      border: 1px solid var(--pink-light);
-      color: var(--pink-dark);
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
+        .experience-item {
+            margin-bottom: 2rem;
+        }
 
-    .carousel-btn:hover {
-      background: rgba(255, 192, 203, 0.5);
-      color: #ff4f9a;
-      transform: scale(1.05);
-    }
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
 
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
+        .date-text {
+            color: var(--pink-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+        }
 
-    .tech-tag {
-      background: rgba(255, 192, 203, 0.35);
-      border: 1px solid var(--pink-medium);
-      color: #ff8fb9;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
+        .position-title {
+            color: var(--pink-medium);
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .position-icon {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
 
-    .tech-tag:hover {
-      background: rgba(255, 192, 203, 0.5);
-      color: #ff77aa;
-      transform: translateY(-2px);
-    }
+        .description-list {
+            color: #e4e4e4;
+            line-height: 1.7;
+            margin-left: 1.2rem;
+        }
 
-    footer {
-      background: rgba(26, 26, 46, 0.95);
-      border-top: 2px solid var(--pink-faded);
-      margin-top: 4rem;
-      padding: 2rem 0;
-    }
+        .description-list li {
+            margin-bottom: 0.4rem;
+        }
 
-    footer p {
-      color: var(--pink-light);
-      opacity: 0.8;
-    }
-  </style>
+        .education-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .degree-text {
+            color: #e4e4e4;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .minor-text {
+            color: #e4e4e4;
+            font-size: 0.95rem;
+            font-style: italic;
+            margin-top: 0.2rem;
+        }
+
+        footer {
+            background: rgba(26, 26, 46, 0.95);
+            border-top: 2px solid var(--pink-faded);
+            margin-top: 4rem;
+            padding: 2rem 0;
+        }
+
+        footer p {
+            color: var(--pink-light);
+            opacity: 0.8;
+        }
+
+        @media (prefers-color-scheme: light) {
+            body {
+                background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 50%, #ffd4e5 100%);
+                color: #2d2d2d;
+            }
+
+            .navbar {
+                background: rgba(255, 255, 255, 0.95) !important;
+            }
+
+            .navbar-item, .navbar-link {
+                color: #d63384 !important;
+            }
+
+            .bio-card h1, .section-title, .position-title {
+                color: #d63384;
+            }
+
+            .bio-card p, .description-list, .degree-text, .minor-text {
+                color: #2d2d2d;
+            }
+
+            .date-text {
+                color: #d63384;
+            }
+
+            footer {
+                background: rgba(255, 255, 255, 0.95);
+            }
+
+            footer p {
+                color: #d63384;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="container">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="index.html">ER</a>
-
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="navbarMenu" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="index.html">Home</a>
-          <a class="navbar-item" href="projects.html">Projects</a>
-          <a class="navbar-item" href="contact.html">Contact Me</a>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="index.html">ER</a>
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-start">
+                    <a class="navbar-item" href="index.html">Home</a>
+                    <a class="navbar-item" href="projects.html">Projects</a>
+                    <a class="navbar-item" href="contact.html">Contact Me</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- Projects Section -->
-  <section class="section" style="margin-top: 3rem;">
-    <div class="container">
-      <h2 class="title is-2 section-title">Projects</h2>
+    <!-- Bio Section -->
+    <section class="section" style="margin-top: 3rem;">
+        <div class="bio-section">
+            <div class="bio-card">
+                <h1>Hey there, I'm Elizabeth Rodriguez</h1>
+                <p>
+                    a developer with a love for bringing creative, innovative ideas to life. I design and deploy projects that inspire me with a touch of my imagination.
+                </p>
+            </div>
 
-      <div class="projects-grid">
+            <!-- Tabs -->
+            <div class="tabs is-centered is-boxed">
+                <ul>
+                    <li class="is-active" data-tab="experience"><a>Experience</a></li>
+                    <li data-tab="education"><a>Education</a></li>
+                </ul>
+            </div>
 
-        <!-- SHPE App -->
-        <div class="project-box">
-          <h3 class="project-title">SHPE App for Kennesaw State University</h3>
-          <p class="project-description">
-            Developing and deploying an app for SHPE e-board members and students at Kennesaw State to enhance communication and event coordination.
-          </p>
-          <div class="image-container">
-            <img src="Shpe.png" alt="SHPE App Screenshot">
-          </div>
-          <div class="tech-stack">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">CSS</span>
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">Firebase</span>
-          </div>
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Experience -->
+                <div class="tab-box" id="experience" style="display: block;">
+                    <h3 class="section-title">Experience</h3>
+                    
+                    <div class="experience-item">
+                        <div class="date-text">2024 – Currently</div>
+                        <div class="position-title">
+                            <img src="care icon.png" alt="Care Icon" class="position-icon">
+                            Tutor – Kennesaw, GA
+                        </div>
+                        <ul class="description-list">
+                            <li>• Provide individualized tutoring support for students in Calculus, English, and other academic subjects.</li>
+                            <li>• Develop personalized lesson plans aligned with each student’s goals, learning style, and skill level.</li>
+                            <li>• Monitor student progress and adjust teaching methods to ensure optimal learning outcomes.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="date-text">July 2022 – August 2022</div>
+                        <div class="position-title">
+                            <img src="google icon.png" alt="Google Icon" class="position-icon">
+                            Google's Computer Science Summer Institute – Atlanta, GA
+                        </div>
+                        <ul class="description-list">
+                            <li>• Presented a web-based interactive musical instrument as a capstone project to Google engineers and community leaders.</li>
+                            <li>• Completed a project-based web development curriculum in HTML, CSS, and JavaScript.</li>
+                            <li>• Attended UX, product design, and software engineering interview workshops.</li>
+                            <li>• Built and configured interactive web applications using JavaScript.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="experience-item">
+                        <div class="date-text">Feb 2019 – Dec 2019</div>
+                        <div class="position-title">
+                            <img src="dkin icon.png" alt="Dunkin Icon" class="position-icon">
+                            Dunkin Donuts – Atlanta, GA
+                        </div>
+                        <ul class="description-list">
+                            <li>• Provided customer service, resolving inquiries and communication issues.</li>
+                            <li>• Maintained store organization and assisted customers efficiently.</li>
+                            <li>• Handled in-person inquiries to improve satisfaction.</li>
+                            <li>• Worked collaboratively in a fast-paced team environment.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="tab-box" id="education" style="display: none;">
+                    <h3 class="section-title">Education</h3>
+                    
+                    <div class="education-item">
+                        <div class="date-text">Aug 2024 – Currently</div>
+                        <div class="position-title">Kennesaw State University – Kennesaw, GA</div>
+                        <div class="degree-text">BS in Computer Science</div>
+                        <div class="minor-text">* Minor in Software Engineering</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="date-text">August 2022 – July 2024</div>
+                        <div class="position-title">Georgia Southern University – Statesboro, GA</div>
+                        <div class="degree-text">BS in Computer Science</div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- KSU Connect -->
-        <div class="project-box">
-          <h3 class="project-title">KSU Connect</h3>
-          <p class="project-description">
-            Created a platform allowing KSU students to connect with peers attending the same events. Designed UI/UX, built the frontend, and assisted with backend development.
-          </p>
-          <div class="image-container">
-            <img src="ksu connect.png" alt="KSU Connect Screenshot">
-          </div>
-          <div class="tech-stack">
-            <span class="tech-tag">Firebase</span>
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">CSS</span>
-            <span class="tech-tag">Figma</span>
-          </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p><strong>Elizabeth Rodriguez</strong> © 2024</p>
         </div>
+    </footer>
 
-        <!-- Depop Fashion -->
-        <div class="project-box" id="depop-project">
-          <h3 class="project-title">Depop Fashion Designs</h3>
-          <p class="project-description">
-            Designed original digital clothing pieces for Depop, experimenting with color, pattern, and style to highlight aesthetic creativity.
-          </p>
-          <div class="image-container">
-            <img id="depop-image" src="design1.jpg" alt="Depop Fashion Design">
-          </div>
-          <div class="carousel-controls" style="position: static; transform: none; margin-bottom: 1rem;">
-            <button class="carousel-btn" id="prev-btn">◄ Previous</button>
-            <button class="carousel-btn" id="next-btn">Next ►</button>
-          </div>
-          <div class="tech-stack">
-            <span class="tech-tag">Outfits</span>
-          </div>
-        </div>
+    <!-- JavaScript for navbar + tabs -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar burger toggle
+            const burgers = document.querySelectorAll('.navbar-burger');
+            burgers.forEach(burger => {
+                burger.addEventListener('click', () => {
+                    const target = burger.dataset.target;
+                    const menu = document.getElementById(target);
+                    burger.classList.toggle('is-active');
+                    menu.classList.toggle('is-active');
+                });
+            });
 
-        <!-- Latin Dance Project -->
-        <div class="project-box">
-          <h3 class="project-title">Latin Dance Culture Awareness Campaign</h3>
-          <p class="project-description">
-            Designed promotional visuals and content for cultural dance intensives, celebrating Latin heritage through rhythm, movement, and community.
-          </p>
-          <div class="image-container">
-            <img src="Latin.jpeg" alt="Latin Dance Poster">
-          </div>
-          <div class="tech-stack">
-            <span class="tech-tag">Canva</span>
-          </div>
-        </div>
-
-        <!-- D2L Data Collection -->
-        <div class="project-box">
-          <h3 class="project-title">D2L Effectiveness Data Analysis</h3>
-          <p class="project-description">
-            Collaborated with a team to collect and analyze student feedback on D2L effectiveness, visualizing survey results through graphs and trend insights.
-          </p>
-          <div class="image-container">
-            <img src="timeline.png" alt="D2L Data Collection Graphs">
-          </div>
-          <div class="tech-stack">
-            <span class="tech-tag">R</span>
-            <span class="tech-tag">Google Sheets</span>
-            <span class="tech-tag">Excel</span>
-            <span class="tech-tag">Google Forms</span>
-          </div>
-        </div>
-
-        <!-- Google Mini Projects -->
-        <div class="project-box">
-          <h3 class="project-title">Google Mini Projects</h3>
-          <p class="project-description">
-            Created multiple interactive projects - from a Jeopardy-style quiz game to guessing challenges showcasing creativity and strong JavaScript logic.
-          </p>
-          <div class="image-container">
-            <img src="apis.png" alt="Google Mini Projects Preview">
-          </div>
-          <div class="tech-stack">
-            <span class="tech-tag">JavaScript</span>
-            <span class="tech-tag">HTML</span>
-            <span class="tech-tag">CSS</span>
-            <span class="tech-tag">Java</span>
-          </div>
-        </div>
-
-      </div> <!-- end of projects-grid -->
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p><strong>Elizabeth Rodriguez</strong> © 2024</p>
-    </div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // Mobile navbar toggle
-    document.addEventListener('DOMContentLoaded', () => {
-      const burgers = document.querySelectorAll('.navbar-burger');
-      burgers.forEach(burger => {
-        burger.addEventListener('click', () => {
-          const target = burger.dataset.target;
-          const menu = document.getElementById(target);
-          burger.classList.toggle('is-active');
-          menu.classList.toggle('is-active');
+            // Tabs switching
+            const tabs = document.querySelectorAll('.tabs li');
+            const boxes = document.querySelectorAll('.tab-box');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('is-active'));
+                    tab.classList.add('is-active');
+                    boxes.forEach(box => box.style.display = 'none');
+                    const tabId = tab.dataset.tab;
+                    document.getElementById(tabId).style.display = 'block';
+                });
+            });
         });
-      });
-    });
-
-    // Depop Fashion Carousel
-    const depopImages = [
-      'design1.jpg',
-      'design2.jpg',
-      'design3.jpg',
-      'design4.jpg',
-      'design5.jpg',
-      'design6.jpg',
-      'design7.jpg',
-      'design8.jpg',
-      'design9.jpg'
-    ];
-    let currentIndex = 0;
-    const depopImage = document.getElementById('depop-image');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-
-    function showImage(index) {
-      depopImage.src = depopImages[index];
-    }
-
-    prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + depopImages.length) % depopImages.length;
-      showImage(currentIndex);
-    });
-
-    nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % depopImages.length;
-      showImage(currentIndex);
-    });
-  </script>
-
+    </script>
 </body>
 </html>
-
